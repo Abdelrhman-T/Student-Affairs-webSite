@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Affairs - Update Student</title>
+    <style>
+        /*Style the navigation bar*/
+
+        /* styling the container elly howa el navbar */
+
+    nav   
+    {
+            background-color: #8dc5d2;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+    }
+      /* styling el items eli fe el navbar */
+    nav a 
+    {
+            display: block;
+            color: rgb(0, 0, 0);
+            padding: 14px 12px;
+            font-weight: bold;
+            text-decoration: none;
+    }
+    /* styling el list elly 4ayla el items */
+    nav ul 
+    {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+    }
+    /* hena ba3mel el green color elly wara el active item */
+    nav a.active 
+    {
+            background-color: #4CAF50;
+    }
+        
+      
+        /* Style the logo */
+    .logo 
+    {
+            color: #fff;
+            width: 180px;
+    }
+
+    </style>
+</head>
+<body>
+
+    <!-- The navigation bar -->
+    <nav>
+        
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Search Student</a></li>
+          <li><a href="#" class="active">Update Student</a></li>
+          <li><a href="#">Show Students</a></li>
+          <li><a href="#">Add New Student</a></li>
+        </ul>
+        <img class="logo" src="src.png" ></img>
+      </nav>
+
+    
+    <h1>Update Student</h1>
+
+	<!-- Student details form -->
+
+	<form>
+		<label for="name">Name:</label>
+        <br>
+		<input type="text" id="name" name="name" value="John Doe">
+		<button type="button">Edit</button><br>
+        <hr>
+
+		<label for="id">ID:</label>
+        <br>
+		<input type="text" id="id" name="id" value="1234567">
+		<button type="button" >Edit</button><br>
+        <hr>
+		<label for="gpa">GPA:</label>
+        <br>
+		<input type="text" id="gpa" name="gpa" value="3.5">
+		<button type="button" >Edit</button><br>
+        <hr>
+		<label for="department">Department:</label>
+        <br>
+		<input type="text" id="department" name="department" value="Computer Science">
+		<button type="button" >Edit</button><br>
+        <hr>
+		<input type="submit" value="Update Student">
+	</form>
+
+	
+</body>
+</html>
