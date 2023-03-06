@@ -72,26 +72,65 @@
 	<form>
 		<label for="name">Name:</label>
         <br>
-		<input type="text" id="name" name="name" value="John Doe">
+		<input type="text" id="name" name="name" value="John Doe" disabled>
+		<button type="button">Edit</button><br>
+        <hr>
+        <label for="name">Email:</label>
+        <br>
+		<input type="text" id="Email" name="Email" value="example@example.com" disabled>
+		<button type="button">Edit</button><br>
+        <hr>
+        <label for="name">Phone Number:</label>
+        <br>
+		<input type="text" id="phone" name="phone" value="+20110000000" disabled>
 		<button type="button">Edit</button><br>
         <hr>
 
 		<label for="id">ID:</label>
         <br>
-		<input type="text" id="id" name="id" value="1234567">
+		<input type="text" id="id" name="id" value="1234567" disabled>
 		<button type="button" >Edit</button><br>
         <hr>
 		<label for="gpa">GPA:</label>
         <br>
-		<input type="text" id="gpa" name="gpa" value="3.5">
+		<input type="text" id="gpa" name="gpa" value="3.5" disabled>
 		<button type="button" >Edit</button><br>
         <hr>
+		<label for="department">Level:</label>
+            <select name="levels" id="levels" disabled>
+            <option value="Do nothing">Choose Level</option>
+            <option value="cs">Level 1</option>
+            <option value="ds">Level 2</option>
+            <option value="is">Level 3</option>
+            <option value="ai">Level 4</option>
+            </select>
+            <button type="button" >Edit</button><br>
+        
+        <hr>
+          
+        <label for="status">status:</label>
+        <input type="radio" name="status" value="active"> active
+        <input type="radio" name="status" value="inactive"> inactive
+		
+        <hr>
+        
 		<label for="department">Department:</label>
-        <br>
-		<input type="text" id="department" name="department" value="Computer Science">
-		<button type="button" >Edit</button><br>
+            <select name="levels" id="department" disabled>
+            <option value="Do nothing">Choose department</option>
+            <option value="cs">CS</option>
+            <option value="ds">DS</option>
+            <option value="is">IS</option>
+            <option value="ai">AI</option>
+            </select>
         <hr>
+      
+     
+        
+        
+
 		<input type="submit" value="Update Student">
+
+        
 	</form>
 
 	
