@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Affairs - Show Students</title>
+    <style>
+        /*Style the navigation bar*/
+
+        /* styling the container elly howa el navbar */
+
+    nav   
+    {
+            background-color: #8dc5d2;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+    }
+      /* styling el items eli fe el navbar */
+    nav a 
+    {
+            display: block;
+            color: rgb(0, 0, 0);
+            padding: 14px 12px;
+            font-weight: bold;
+            text-decoration: none;
+    }
+    /* styling el list elly 4ayla el items */
+    nav ul 
+    {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+    }
+    /* hena ba3mel el green color elly wara el active item */
+    nav a.active 
+    {
+            background-color: #4CAF50;
+    }
+
+
+        /* Style the logo */
+    .logo 
+    {
+            color: #fff;
+            width: 180px;
+    }
+    
+    #myTable {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+    }
+
+    #myTable th, #myTable td {
+    text-align: left;
+    padding: 12px;
+    }
+
+    #myTable tr {
+    border-bottom: 1px solid #ddd;
+    }
+
+    #myTable tr.header, #myTable tr:hover {
+    background-color: #f1f1f1;
+    }
+
+    
+
+    </style>
+</head>
+<body>
+    
+    <!-- The navigation bar -->
+    <nav>
+
+        <ul>
+         
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Search Student</a></li>
+          <li><a href="#">Update Student</a></li>
+          <li><a href="#" class="active">Show Students</a></li>
+          <li><a href="#">Add New Student</a></li>
+        </ul>
+        <img class="logo" src="src.png" ></img>
+      </nav>
+      
+
+      
+  <h1>Show Student</h1>
+  <br>
+        <!-- filter the shown students according to year, department and status-->
+        <form>
+            <label for="year"><b>Select Year</b></label>
+            <select id="year" name="year">
+              <option value="All">All</option>
+              <option value="First Year">First Year</option>
+              <option value="Second Year">Second Year</option>
+              <option value="Third Year">Third Year</option>
+              <option value="Fourth Year">Fourth Year</option>
+            
+            </select>
+        
+            
+
+
+            <label for="DEP"><b>Select Department</b></label>
+            <select id="DEP" name="DEP">
+                <option value="All">All</option>
+                <option value="AI">AI</option>
+                <option value="CS"> CS</option>
+                <option value="DS">DS</option>
+                <option value="IS">IS</option>
+                <option value="IT">IT</option>
+            </select>
+
+            <label for="Status"><b>Select Status</b></label>
+            <select id="Status" name="Status">
+                <option value="All">All</option>
+                <option value="Active">Active</option>
+                <option value="Inactive"> Inactive</option>
+            </select>
+           
+          </form>
+
+          <br><br>
+
+
+      <!--the table -->
+      <table id="myTable">
+        <tr class="header">
+          <th style="width:20%;">Name</th>
+          <th style="width: 10%;">ID</th>
+          <th style="width: 10%;">GPA</th>
+          <th style="width:10%;">Department</th>
+          <th style="width:10%;">Level</th>
+          <th style="width:10%;">Status</th>
+          <th style="width:10%;">Gender</th>
+          <th style="width:13%;">E-mail</th>
+          <th style="width:10%;">Birth Date</th>
+          <th style="width:10%;">Mobile Number</th>
+          
+          
+        </tr>
+    </table>
+  
+
+
+</body>
+</html>
