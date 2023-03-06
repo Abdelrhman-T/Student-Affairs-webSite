@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Search Student</title>
+    <style>
+      /*Style the navigation bar*/
+
+      /* styling the container elly howa el navbar */
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      nav {
+        background-color: #8dc5d2;
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+      }
+      /* styling el items eli fe el navbar */
+      nav li {
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+      }
+      nav a {
+        flex-basis: 1;
+        display: flex;
+        color: rgb(0, 0, 0);
+        padding: 0 12px;
+        font-weight: bold;
+        text-decoration: none;
+        align-items: center;
+        justify-content: center;
+      }
+      /* styling el list elly 4ayla el items */
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        height: 100%;
+      }
+
+      /* hena ba3mel el green color elly wara el active item */
+      nav li.active {
+        background-color: #4caf50;
+      }
+
+      /* Style the logo */
+      .logo {
+        color: #fff;
+        width: 180px;
+      }
+    </style>
+    <style>
+      /* main content styling */
+      .search-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <img class="logo" src="Resources\src.png" />
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li class="active"><a href="#">Search Student</a></li>
+        <li><a href="#">Show Students</a></li>
+        <li><a href="#">Add New Student</a></li>
+      </ul>
+    </nav>
+    <h1>Search Student</h1>
+    <div class="search-container">
+      <div class="search-box">
+        <form action="#">
+          <div class="search-box">
+            <label for="search">Search</label>
+            <input placeholder="Enter Student Name" type="text" id="search" />
+            <button type="submit"><img src="Icon.png" />Search</button>
+          </div>
+        </form>
+      </div>
+      <div class="search-result">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>ID</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Youssef Emad Eldin Ali</td>
+              <td>20210479</td>
+              <td>
+                <div class="buttons">
+                  <button>Edit</button><button>Edit Dep.</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Youssef Emad Eldin Ali</td>
+              <td>20210479</td>
+              <td>
+                <div class="buttons">
+                  <button>Edit</button><button>Edit Dep.</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Youssef Emad Eldin Ali</td>
+              <td>20210479</td>
+              <td>
+                <div class="buttons">
+                  <button>Edit</button><button>Edit Dep.</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Youssef Emad Eldin Ali</td>
+              <td>20210479</td>
+              <td>
+                <div class="buttons">
+                  <button>Edit</button><button>Edit Dep.</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Youssef Emad Eldin Ali</td>
+              <td>20210479</td>
+              <td>
+                <div><button>Edit</button><button>Edit Dep.</button></div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
