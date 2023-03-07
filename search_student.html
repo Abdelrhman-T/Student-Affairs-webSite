@@ -66,13 +66,124 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 6rem;
+      }
+      .search-form {
+        width: 40%;
+        margin-bottom: 3rem;
+      }
+      .search-box {
+        background-color: rgb(250, 250, 250);
+        box-shadow: 0px 0px 2px rgb(135 135 135);
+        border-radius: 3px;
+        padding: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      #search {
+        width: 100%;
+        height: 2.5rem;
+        border: none;
+        background-image: none;
+        background-color: transparent;
+        outline: none;
+        box-shadow: none;
+        font-size: 0.9rem;
+        padding: 8px 0 8px 8px;
+        margin-right: 8px;
+        border-right: 1px solid lightgray;
+      }
+
+      #search::placeholder {
+        color: #c4c4c4;
+      }
+      #search-btn {
+        display: flex;
+        align-items: center;
         justify-content: center;
+        width: 135px;
+        height: 2.5rem;
+        border: none;
+        border-radius: 3px;
+        box-shadow: 0px 0px 2px rgb(150 150 150);
+        margin: 0;
+        padding: 0;
+        background-color: #275799;
+        color: white;
+      }
+      #search-btn > img {
+        width: 1rem;
+        margin-right: 0.2rem;
+      }
+
+      .result {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      table {
+        border-collapse: collapse;
+        box-shadow: 0px 0px 3px rgb(135 135 135);
+        width: 40%;
+      }
+      thead {
+        background-color: #275799;
+        color: white;
+      }
+      tr {
+        text-align: left;
+      }
+
+      tr td:last-of-type {
+        text-align: right;
+      }
+
+      td,
+      th {
+        padding: 6px;
+      }
+
+      tbody tr:nth-child(odd) {
+        background-color: #dfe2e7;
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        align-items: center;
+      }
+      .buttons button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        margin: 0;
+        padding: 5px;
+        border-radius: 3px;
+        color: white;
+        box-shadow: 0px 0px 1px rgb(150 150 150);
+      }
+      .buttons button:first-of-type {
+        margin-right: 5px;
+        background-color: rgb(195, 52, 52);
+      }
+
+      .buttons button:first-of-type img {
+        width: 1rem;
+      }
+
+      .buttons button:last-of-type {
+        margin-right: 5px;
+        background-color: rgb(64, 174, 51);
       }
     </style>
   </head>
   <body>
     <nav>
-      <img class="logo" src="Resources\src.png" />
+      <img class="logo" src="Resources/src.png" />
       <ul>
         <li><a href="#">Home</a></li>
         <li class="active"><a href="#">Search Student</a></li>
@@ -80,23 +191,24 @@
         <li><a href="#">Add New Student</a></li>
       </ul>
     </nav>
-    <h1>Search Student</h1>
     <div class="search-container">
-      <div class="search-box">
+      <div class="search-form">
         <form action="#">
           <div class="search-box">
-            <label for="search">Search</label>
             <input placeholder="Enter Student Name" type="text" id="search" />
-            <button type="submit"><img src="Icon.png" />Search</button>
+            <button type="submit" id="search-btn">
+              <img src="Resources/search-icon-white.png" />Search
+            </button>
           </div>
         </form>
       </div>
-      <div class="search-result">
+      <div class="result">
         <table>
           <thead>
             <tr>
               <th>Name</th>
               <th>ID</th>
+              <th>GPA</th>
               <th></th>
             </tr>
           </thead>
@@ -104,47 +216,60 @@
             <tr>
               <td>Youssef Emad Eldin Ali</td>
               <td>20210479</td>
+              <td>3.05</td>
               <td>
                 <div class="buttons">
-                  <button>Edit</button><button>Edit Dep.</button>
+                  <button><img src="Resources/edit-white.png" href="" /></button
+                  ><button>Select Dep</button>
                 </div>
               </td>
             </tr>
             <tr>
-              <td>Youssef Emad Eldin Ali</td>
-              <td>20210479</td>
+              <td>Lorem ipsum dolor sit amet amet et.</td>
+              <td>20210798</td>
+              <td>3.95</td>
               <td>
                 <div class="buttons">
-                  <button>Edit</button><button>Edit Dep.</button>
+                  <button><img src="Resources/edit-white.png" href="" /></button
+                  ><button>Select Dep</button>
                 </div>
               </td>
             </tr>
             <tr>
-              <td>Youssef Emad Eldin Ali</td>
-              <td>20210479</td>
+              <td>Lorem ipsum dolor sit amet consectetur</td>
+              <td>20210129</td>
+              <td>4.0</td>
               <td>
                 <div class="buttons">
-                  <button>Edit</button><button>Edit Dep.</button>
+                  <button><img src="Resources/edit-white.png" href="" /></button
+                  ><button>Select Dep</button>
                 </div>
               </td>
             </tr>
             <tr>
-              <td>Youssef Emad Eldin Ali</td>
-              <td>20210479</td>
+              <td>repellat sit nobis cupiditate? Nobis</td>
+              <td>20210568</td>
+              <td>2.55</td>
               <td>
                 <div class="buttons">
-                  <button>Edit</button><button>Edit Dep.</button>
+                  <button><img src="Resources/edit-white.png" href="" /></button
+                  ><button>Select Dep</button>
                 </div>
               </td>
             </tr>
             <tr>
-              <td>Youssef Emad Eldin Ali</td>
-              <td>20210479</td>
+              <td>adipisicing elit Quia magni itaque consequatur</td>
+              <td>20210542</td>
+              <td>3.65</td>
               <td>
-                <div><button>Edit</button><button>Edit Dep.</button></div>
+                <div class="buttons">
+                  <button><img src="Resources/edit-white.png" href="" /></button
+                  ><button>Select Dep</button>
+                </div>
               </td>
             </tr>
           </tbody>
+          <tfoot></tfoot>
         </table>
       </div>
     </div>
