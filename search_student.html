@@ -14,46 +14,47 @@
         padding: 0;
       }
 
-      nav {
-        background-color: #8dc5d2;
-        height: 60px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 20px;
-      }
-      /* styling el items eli fe el navbar */
-      nav li {
-        display: flex;
-        align-items: stretch;
-        justify-content: center;
-      }
-      nav a {
-        flex-basis: 1;
-        display: flex;
-        color: rgb(0, 0, 0);
-        padding: 0 12px;
-        font-weight: bold;
-        text-decoration: none;
-        align-items: center;
-        justify-content: center;
-      }
-      /* styling el list elly 4ayla el items */
-      nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: stretch;
-        height: 100%;
-      }
 
-      /* hena ba3mel el green color elly wara el active item */
-      nav li.active {
-        background-color: #4caf50;
-      }
-
+      nav   
+        {
+                background-color: #8dc5d2;
+                height: 50px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                
+                padding: 0 20px;
+        }
+        /* styling el items eli fe el navbar */
+        nav a 
+        {
+                display: block;
+                color: rgb(0, 0, 0);
+                padding: 14px 12px;
+                font-weight: bold;
+                text-decoration: none;
+        }
+        /* styling el list elly 4ayla el items */
+        nav ul 
+        {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+        }
+        /* hena ba3mel el green color elly wara el active item */
+        nav a.active 
+        {
+                background-color: #4CAF50;
+        }
+            
+        
+            /* Style the logo */
+        .logo 
+        {
+                color: #fff;
+                width: 180px;
+        }
       /* Style the logo */
       .logo {
         color: #fff;
@@ -183,14 +184,19 @@
   </head>
   <body>
     <nav>
-      <img class="logo" src="Resources/src.png" />
       <ul>
-        <li><a href="#">Home</a></li>
-        <li class="active"><a href="#">Search Student</a></li>
-        <li><a href="#">Show Students</a></li>
-        <li><a href="#">Add New Student</a></li>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="Add_student.html">Add Student</a></li>
+          <li><a href="Update_student.html">Update Student</a></li>
+          <li><a href="search_student.html" class="active">Search for Students</a></li>
+          <li><a href="show_students.html">View All Students</a></li>
+          <li><a href="SignIn.html">SignIn</a></li>
+          <li><a href="SignUp.html">SignUp</a></li>
       </ul>
-    </nav>
+      <a href="home.html">
+          <img src="/Resources/src.png" alt="Student Affairs" width="180px" height="46">
+      </a>
+  </nav>
     <div class="search-container">
       <div class="search-form">
         <form action="#">
