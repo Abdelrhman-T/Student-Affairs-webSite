@@ -6,62 +6,48 @@
       /*Style the navigation bar*/
 
       /* styling the container elly howa el navbar */
-      * {
-        box-sizing: border-box;
+
+      nav {
+        background-color: #8dc5d2;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 0 20px;
       }
-      body {
+      /* styling el items eli fe el navbar */
+      nav a {
+        display: block;
+        color: rgb(0, 0, 0);
+        padding: 14px 12px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      /* styling el list elly 4ayla el items */
+      nav ul {
+        list-style: none;
         margin: 0;
         padding: 0;
+        display: flex;
+      }
+      /* hena ba3mel el green color elly wara el active item */
+      nav a.active {
+        background-color: #4caf50;
       }
 
-
-      nav   
-        {
-                background-color: #8dc5d2;
-                height: 50px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                
-                padding: 0 20px;
-        }
-        /* styling el items eli fe el navbar */
-        nav a 
-        {
-                display: block;
-                color: rgb(0, 0, 0);
-                padding: 14px 12px;
-                font-weight: bold;
-                text-decoration: none;
-        }
-        /* styling el list elly 4ayla el items */
-        nav ul 
-        {
-                list-style: none;
-                margin: 0;
-                padding: 0;
-                display: flex;
-        }
-        /* hena ba3mel el green color elly wara el active item */
-        nav a.active 
-        {
-                background-color: #4CAF50;
-        }
-            
-        
-            /* Style the logo */
-        .logo 
-        {
-                color: #fff;
-                width: 180px;
-        }
+      /* Style the logo */
+      .logo {
+        color: #fff;
+        width: 180px;
+      }
       /* Style the logo */
       .logo {
         color: #fff;
         width: 180px;
       }
     </style>
-    <style>
+    <!-- <style>
       /* main content styling */
       .search-container {
         display: flex;
@@ -127,7 +113,7 @@
       table {
         border-collapse: collapse;
         box-shadow: 0px 0px 3px rgb(135 135 135);
-        width: 40%;
+        width: 50%;
       }
       thead {
         background-color: #275799;
@@ -137,13 +123,16 @@
         text-align: left;
       }
 
-      tr td:last-of-type {
+      td:last-of-type {
         text-align: right;
+      }
+      thead tr th:last-of-type {
+        text-align: center;
       }
 
       td,
       th {
-        padding: 6px;
+        padding: 0.5rem;
       }
 
       tbody tr:nth-child(odd) {
@@ -168,7 +157,6 @@
         box-shadow: 0px 0px 1px rgb(150 150 150);
       }
       .buttons button:first-of-type {
-        margin-right: 5px;
         background-color: rgb(195, 52, 52);
       }
 
@@ -177,26 +165,35 @@
       }
 
       .buttons button:last-of-type {
-        margin-right: 5px;
         background-color: rgb(64, 174, 51);
       }
-    </style>
+
+      .separator {
+        margin: 0 4px;
+      }
+    </style> -->
   </head>
   <body>
     <nav>
       <ul>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="Add_student.html">Add Student</a></li>
-          <li><a href="Update_student.html">Update Student</a></li>
-          <li><a href="search_student.html" class="active">Search for Students</a></li>
-          <li><a href="show_students.html">View All Students</a></li>
-          <li><a href="SignIn.html">SignIn</a></li>
-          <li><a href="SignUp.html">SignUp</a></li>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="Add_student.html">Add Student</a></li>
+        <li><a href="Update_student.html">Update Student</a></li>
+        <li>
+          <a href="search_student.html" class="active">Search for Students</a>
+        </li>
+        <li><a href="show_students.html">View All Students</a></li>
+        <li><a href="SignIn.html">SignIn</a></li>
       </ul>
       <a href="home.html">
-          <img src="/Resources/src.png" alt="Student Affairs" width="180px" height="46">
+        <img
+          src="Resources/src.png"
+          alt="Student Affairs"
+          width="180px"
+          height="46"
+        />
       </a>
-  </nav>
+    </nav>
     <div class="search-container">
       <div class="search-form">
         <form action="#">
@@ -215,18 +212,21 @@
               <th>Name</th>
               <th>ID</th>
               <th>GPA</th>
-              <th></th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Youssef Emad Eldin Ali</td>
               <td>20210479</td>
-              <td>3.05</td>
+              <td>1.15</td>
               <td>
                 <div class="buttons">
-                  <button><img src="Resources/edit-white.png" href="" /></button
-                  ><button>Select Dep</button>
+                  <button>
+                    <img src="Resources/edit-white.png" href="" />
+                  </button>
+                  <div class="separator"></div>
+                  <button>Select Dep</button>
                 </div>
               </td>
             </tr>
@@ -236,8 +236,11 @@
               <td>3.95</td>
               <td>
                 <div class="buttons">
-                  <button><img src="Resources/edit-white.png" href="" /></button
-                  ><button>Select Dep</button>
+                  <button>
+                    <img src="Resources/edit-white.png" href="" />
+                  </button>
+                  <div class="separator"></div>
+                  <button>Select Dep</button>
                 </div>
               </td>
             </tr>
@@ -247,8 +250,11 @@
               <td>4.0</td>
               <td>
                 <div class="buttons">
-                  <button><img src="Resources/edit-white.png" href="" /></button
-                  ><button>Select Dep</button>
+                  <button>
+                    <img src="Resources/edit-white.png" href="" />
+                  </button>
+                  <div class="separator"></div>
+                  <button>Select Dep</button>
                 </div>
               </td>
             </tr>
@@ -258,8 +264,11 @@
               <td>2.55</td>
               <td>
                 <div class="buttons">
-                  <button><img src="Resources/edit-white.png" href="" /></button
-                  ><button>Select Dep</button>
+                  <button>
+                    <img src="Resources/edit-white.png" href="" />
+                  </button>
+                  <div class="separator"></div>
+                  <button>Select Dep</button>
                 </div>
               </td>
             </tr>
@@ -269,8 +278,11 @@
               <td>3.65</td>
               <td>
                 <div class="buttons">
-                  <button><img src="Resources/edit-white.png" href="" /></button
-                  ><button>Select Dep</button>
+                  <button>
+                    <img src="Resources/edit-white.png" href="" />
+                  </button>
+                  <div class="separator"></div>
+                  <button>Select Dep</button>
                 </div>
               </td>
             </tr>

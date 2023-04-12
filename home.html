@@ -1,137 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Affairs</title>
-    <style>
-        /*Style the navigation bar*/
+    <link rel="stylesheet" href="css/home.css">
 
-        /* styling the container elly howa el navbar */
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        nav   
-        {
-                background-color: #8dc5d2;
-                height: 50px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                
-                padding: 0 20px;
-        }
-        /* styling el items eli fe el navbar */
-        nav a 
-        {
-                display: block;
-                color: rgb(0, 0, 0);
-                padding: 14px 12px;
-                font-weight: bold;
-                text-decoration: none;
-        }
-        /* styling el list elly 4ayla el items */
-        nav ul 
-        {
-                list-style: none;
-                margin: 0;
-                padding: 0;
-                display: flex;
-        }
-        /* hena ba3mel el green color elly wara el active item */
-        nav a.active 
-        {
-                background-color: #4CAF50;
-        }
-            
-        
-            /* Style the logo */
-        .logo 
-        {
-                color: #fff;
-                width: 180px;
-        }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;800&display=swap" rel="stylesheet">
 
-    </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="home.html" class="active">Home</a></li>
-                <li><a href="Add_student.html">Add Student</a></li>
-                <li><a href="Update_student.html">Update Student</a></li>
-                <li><a href="search_student.html">Search for Students</a></li>
-                <li><a href="show_students.html">View All Students</a></li>
-                <li><a href="SignIn.html">SignIn</a></li>
-                <li><a href="SignUp.html">SignUp</a></li>
-            </ul>
-            <a href="home.html">
-                <img src="/Resources/src.png" alt="Student Affairs" width="180px" height="46">
-            </a>
-        </nav>
-        <br>
-        <br>
-        <br>
-    </header>
-    <section class="About Us">
-        <h2>Welcome to our Student Affairs Website</h2>
-        <p>
-            Our platform is designed to help you manage student information in an efficient and organized manner.
-            <br>
-            With our easy-to-use functionalities, you can add, update, and delete student information, search for active students by name, and assign departments to students who meet the required criteria.
-        </p>
-
-        <p>
-            platform offers the following minimum functionalities:
-        </p>
+      <nav>
         <ul>
-            <li>
-                Add New Student: You can easily add a new student to our system by providing their id, name, date of birth, GPA, gender, level, status, department, email, and mobile number.
-            </li>
-            <li>
-                Update Existing Student Information: You can update an existing student's information, except for the department field, which is shown disabled for editing.
-            </li>
-            <li>
-                Update Existing Student Information: You can update an existing student's information, except for the department field, which is shown disabled for editing.
-            </li>
-            <li>
-                Delete Student Data: Our platform allows you to delete an existing student's data with a confirmation dialogue for the action before deletion occurs.
-            </li>
-            <li>
-                Search for Active Students: You can search for active students by name in the search for students screen. Students with similar names having active status are rendered as a table.
-            </li>
-            <li>
-                Assign Department to Students: You can select a specific student after searching to assign a department through the student's department assignment page. The page includes student ID, name, and a dropdown list for available departments and a submit button. This action is applicable for students if level = 3; otherwise, an error is shown to the user with a clear, understandable error message.
-
-            </li>
-            <li>
-                View All Students: You can view all active/inactive students in a separate page rendered in a table with a related set of attributes only.
-            </li>
-            <li>
-                Change Student Status: You can change the status of a student from active to inactive or vice versa from the table viewing all students.
-            </li>
+          <li><a href="home.html" class="active">Home</a></li>
+          <li><a href="Add_student.html">Add Student</a></li>
+          <li><a href="Update_student.html">Update Student</a></li>
+          <li><a href="search_student.html">Search for Students</a></li>
+          <li><a href="show_students.html">View All Students</a></li>
+          <li><a href="SignIn.html">SignIn</a></li>
         </ul>
-        <p>
-            Thank you for choosing our Student Affairs website to manage your student information needs.
-        </p> 
-        <p>
-            For any questions or feedback regarding our website, please feel free to contact us and Stay updated with our latest news and updates by following us ....
-        </p>
-    </section>
-    <br>
-    <br>
-    <br>
-    <br>
-    <footer style="background-color: rgb(0 0 0);color: #ffffff;">
-        <p>Contact us at: <a href="mailto:xxxxxxxxxxxxxxxxxxxx">xxxxxxxxxxxxxxxxxxxx</a></p>
-        <p>Follow us on social media:</p>
-        <p>
-            <a href="#">Facebook</a> | 
-            <a href="#">Twitter</a> | 
+        <a href="home.html">
+          <img
+            src="Resources/src.png"
+            alt="Student Affairs"
+            width="180px"
+            height="46"
+          />
+        </a>
+      </nav>
+    </header>
+    <div class="main">
+      <section class="About">
+        <div class="overlay"></div>
+        <div class="welcome">
+          <div class="text">
+            <div class="content">
+              <h2>Welcome to our Student Affairs Website</h2>
+              <p>
+                Our platform is designed to help you manage student information in an
+                efficient and organized manner.
+                <br />
+                With our easy-to-use functionalities, you can add, update, and delete
+                student information, search for active students by name, and assign
+                departments to students who meet the required criteria.
+              </p>
+            </div>
+          </div>
+        </div>
+            <!-- Start Services -->
+        <div class="services" id="service">
+          <div class="container">
+              <div class="main-heading">
+                  <h2>Services</h2>
+                  <p>
+                      Platform offers the following minimum functionalities
+                  </p>
+              </div>
+              <div class="srv-content">
+                  <div class="srv-box">
+                      <div class="text">
+                          <h3>Add New Student</h3>
+                          <p>
+                          You can easily add a new student to our system.
+                          </p>
+                      </div>
+                  </div>
+                  <div class="srv-box">
+                      <div class="text">
+                          <h3>Update Existing Student Information</h3>
+                          <p>
+                              You can update a student's information.
+                          </p>
+                      </div>
+                  </div>
+                  <div class="srv-box">
+                      <div class="text">
+                          <h3>Delete Student Data</h3>
+                          <p>
+                              You can delete an existing student's data.
+                          </p>
+                      </div>
+                  </div>
+                  <div class="srv-box">
+                      <div class="text">
+                          <h3>Search for Active Students</h3>
+                          <p>
+                              You can search for active students by name.
+                          </p>
+                      </div>
+                  </div>
+                  <div class="srv-box">
+                      <div class="text">
+                          <h3>View All Students</h3>
+                          <p>
+                              You can view all active/inactive students.
+                          </p>
+                      </div>
+                  </div>
+                  <div class="srv-box">
+                      <div class="text">
+                          <h3>Change Student Status</h3>
+                          <p>
+                              You can change the status of a student .
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- End Services -->
+        <div class="thanks">
+          <div class="text">
+            <div class="content">
+              <p>
+                Thank you for choosing our Student Affairs website to manage your
+                student information needs.
+              </p>
+              <p>
+                For any questions or feedback regarding our website, please feel free to
+                contact us and Stay updated with our latest news and updates by
+                following us ....
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <div class="sections">
+        <div class="d1">
+          <h3>Get In Touch</h3>
+          <p>
+            Contact us at:
+            <a href="mailto:xxxxxxxxxxxxxxxxxxxx">xxxxxxxxxxxxxxxxxxxx</a>
+          </p>
+          <p>Follow us on social media:</p>
+          <p>
+            <a href="#">Facebook</a> | <a href="#">Twitter</a> |
             <a href="#">Instagram</a>
-        </p>
+          </p>
+        </div>
+        <div class="d2">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="Add_student.html">Add Student</a></li>
+            <li><a href="Update_student.html">Update Student</a></li>
+            <li><a href="search_student.html">Search for Students</a></li>
+            <li><a href="show_students.html">View All Students</a></li>
+            <li><a href="SignIn.html">SignIn</a></li>
+          </ul>
+        </div>
+        <div class="d3">
+          <h3>Popular Links</h3>
+          <ul>
+            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="Add_student.html">Add Student</a></li>
+            <li><a href="Update_student.html">Update Student</a></li>
+            <li><a href="search_student.html">Search for Students</a></li>
+            <li><a href="show_students.html">View All Students</a></li>
+            <li><a href="SignIn.html">SignIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyR">
         <p>&copy; 2023 Student Affairs Website. All rights reserved.</p>
-
+      </div>
     </footer>
-</body>
+
+  </body>
 </html>
