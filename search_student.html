@@ -1,295 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
     <title>Search Student</title>
-    <style>
-      /*Style the navigation bar*/
 
-      /* styling the container elly howa el navbar */
-
-      nav {
-        background-color: #8dc5d2;
-        height: 50px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        padding: 0 20px;
-      }
-      /* styling el items eli fe el navbar */
-      nav a {
-        display: block;
-        color: rgb(0, 0, 0);
-        padding: 14px 12px;
-        font-weight: bold;
-        text-decoration: none;
-      }
-      /* styling el list elly 4ayla el items */
-      nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-      }
-      /* hena ba3mel el green color elly wara el active item */
-      nav a.active {
-        background-color: #4caf50;
-      }
-
-      /* Style the logo */
-      .logo {
-        color: #fff;
-        width: 180px;
-      }
-      /* Style the logo */
-      .logo {
-        color: #fff;
-        width: 180px;
-      }
-    </style>
-    <!-- <style>
-      /* main content styling */
-      .search-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 6rem;
-      }
-      .search-form {
-        width: 40%;
-        margin-bottom: 3rem;
-      }
-      .search-box {
-        background-color: rgb(250, 250, 250);
-        box-shadow: 0px 0px 2px rgb(135 135 135);
-        border-radius: 3px;
-        padding: 4px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      #search {
-        width: 100%;
-        height: 2.5rem;
-        border: none;
-        background-image: none;
-        background-color: transparent;
-        outline: none;
-        box-shadow: none;
-        font-size: 0.9rem;
-        padding: 8px 0 8px 8px;
-        margin-right: 8px;
-        border-right: 1px solid lightgray;
-      }
-
-      #search::placeholder {
-        color: #c4c4c4;
-      }
-      #search-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 135px;
-        height: 2.5rem;
-        border: none;
-        border-radius: 3px;
-        box-shadow: 0px 0px 2px rgb(150 150 150);
-        margin: 0;
-        padding: 0;
-        background-color: #275799;
-        color: white;
-      }
-      #search-btn > img {
-        width: 1rem;
-        margin-right: 0.2rem;
-      }
-
-      .result {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      table {
-        border-collapse: collapse;
-        box-shadow: 0px 0px 3px rgb(135 135 135);
-        width: 50%;
-      }
-      thead {
-        background-color: #275799;
-        color: white;
-      }
-      tr {
-        text-align: left;
-      }
-
-      td:last-of-type {
-        text-align: right;
-      }
-      thead tr th:last-of-type {
-        text-align: center;
-      }
-
-      td,
-      th {
-        padding: 0.5rem;
-      }
-
-      tbody tr:nth-child(odd) {
-        background-color: #dfe2e7;
-      }
-
-      .buttons {
-        display: flex;
-        flex-direction: row;
-        justify-content: right;
-        align-items: center;
-      }
-      .buttons button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: none;
-        margin: 0;
-        padding: 5px;
-        border-radius: 3px;
-        color: white;
-        box-shadow: 0px 0px 1px rgb(150 150 150);
-      }
-      .buttons button:first-of-type {
-        background-color: rgb(195, 52, 52);
-      }
-
-      .buttons button:first-of-type img {
-        width: 1rem;
-      }
-
-      .buttons button:last-of-type {
-        background-color: rgb(64, 174, 51);
-      }
-
-      .separator {
-        margin: 0 4px;
-      }
-    </style> -->
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/search.css" />
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwsom icons -->
+    <script
+      src="https://kit.fontawesome.com/cc1bd84a2e.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="Add_student.html">Add Student</a></li>
-        <li><a href="Update_student.html">Update Student</a></li>
-        <li>
-          <a href="search_student.html" class="active">Search for Students</a>
-        </li>
-        <li><a href="show_students.html">View All Students</a></li>
-        <li><a href="SignIn.html">SignIn</a></li>
-      </ul>
-      <a href="home.html">
-        <img
-          src="Resources/src.png"
-          alt="Student Affairs"
-          width="180px"
-          height="46"
-        />
-      </a>
-    </nav>
-    <div class="search-container">
-      <div class="search-form">
-        <form action="#">
-          <div class="search-box">
-            <input placeholder="Enter Student Name" type="text" id="search" />
-            <button type="submit" id="search-btn">
-              <img src="Resources/search-icon-white.png" />Search
-            </button>
-          </div>
-        </form>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="Add_student.html">Add Student</a></li>
+          <li class="active">
+            <a href="search_student.html">Search for Students</a>
+          </li>
+          <li><a href="show_students.html">View All Students</a></li>
+          <li><a href="SignIn.html">Sign Out</a></li>
+        </ul>
+        <a href="home.html">
+          <img
+            src="Resources/src.png"
+            alt="Student Affairs"
+            width="180px"
+            height="46"
+          />
+        </a>
+      </nav>
+    </header>
+    <section class="search-container">
+      <div class="merged-table">
+        <div class="search-form">
+          <form action="#">
+            <div class="search-box">
+              <input
+                placeholder="Enter Student Name/ID"
+                type="text"
+                id="search"
+                autocomplete="off"
+                maxlength="100"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="result">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>ID</th>
+                <th>GPA</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot></tfoot>
+          </table>
+        </div>
       </div>
-      <div class="result">
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>ID</th>
-              <th>GPA</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Youssef Emad Eldin Ali</td>
-              <td>20210479</td>
-              <td>1.15</td>
-              <td>
-                <div class="buttons">
-                  <button>
-                    <img src="Resources/edit-white.png" href="" />
-                  </button>
-                  <div class="separator"></div>
-                  <button>Select Dep</button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Lorem ipsum dolor sit amet amet et.</td>
-              <td>20210798</td>
-              <td>3.95</td>
-              <td>
-                <div class="buttons">
-                  <button>
-                    <img src="Resources/edit-white.png" href="" />
-                  </button>
-                  <div class="separator"></div>
-                  <button>Select Dep</button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Lorem ipsum dolor sit amet consectetur</td>
-              <td>20210129</td>
-              <td>4.0</td>
-              <td>
-                <div class="buttons">
-                  <button>
-                    <img src="Resources/edit-white.png" href="" />
-                  </button>
-                  <div class="separator"></div>
-                  <button>Select Dep</button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>repellat sit nobis cupiditate? Nobis</td>
-              <td>20210568</td>
-              <td>2.55</td>
-              <td>
-                <div class="buttons">
-                  <button>
-                    <img src="Resources/edit-white.png" href="" />
-                  </button>
-                  <div class="separator"></div>
-                  <button>Select Dep</button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>adipisicing elit Quia magni itaque consequatur</td>
-              <td>20210542</td>
-              <td>3.65</td>
-              <td>
-                <div class="buttons">
-                  <button>
-                    <img src="Resources/edit-white.png" href="" />
-                  </button>
-                  <div class="separator"></div>
-                  <button>Select Dep</button>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-          <tfoot></tfoot>
-        </table>
+      <div class="arrows">
+        <i class="fa-solid fa-caret-left" id="left"></i>
+        <i class="fa-solid fa-caret-right" id="right"></i>
+      </div>
+    </section>
+    <div class="overlay-container hidden">
+      <div class="overlay"></div>
+      <div class="msg">
+        <span class="cross">&times;</span>
+        <div class="content"></div>
       </div>
     </div>
+    <template id="error-overlay">
+      <p>
+        Cannot Modify Student's Department.<br />
+        Current Student Level: <span id="student-level"></span><br />
+        Required Level: 3
+      </p>
+    </template>
+    <template id="delete-overlay">
+      <p>
+        Are You Sure You Want To Delete Student: <span id="student-id"></span>?
+      </p>
+      <form action="#" class="delete-form">
+        <button type="submit" student-id="" id="confirm-delete-btn">
+          Delete
+        </button>
+      </form>
+    </template>
+    <template id="student-row">
+      <tr class="data" data-value="">
+        <td class="student-name"></td>
+        <td class="student-id"></td>
+        <td class="student-gpa"></td>
+        <td>
+          <div class="actions">
+            <span>
+              <i class="fa-solid fa-door-open department"></i>
+            </span>
+            <span>
+              <a href="update_student.html">
+                <i class="fa-solid fa-pen-to-square edit"></i>
+              </a>
+            </span>
+            <span>
+              <i class="fa-solid fa-trash-can delete"></i>
+            </span>
+          </div>
+        </td>
+      </tr>
+    </template>
+    <script src="js/data.js"></script>
+    <script src="js/search.js"></script>
   </body>
 </html>
