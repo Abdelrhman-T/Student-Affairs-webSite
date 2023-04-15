@@ -281,3 +281,7 @@ th {
 .delete-form button:hover {
   background-color: var(--darkRed);
 }
+
+.grey {
+  color: #afafaf !important;
+}

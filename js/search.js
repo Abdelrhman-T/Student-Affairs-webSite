@@ -3,7 +3,7 @@
 
 let fullData = JSON.parse(window.localStorage.getItem('data'));
 let shownData = fullData.filter(student => {
-    if (student.active){
+    if (student.status){
         return student;
     }
 });
@@ -42,6 +42,7 @@ function fillTable(){
         rowData[0].textContent = shownData[i].name;
         rowData[1].textContent = shownData[i].id;
         rowData[2].textContent = shownData[i].gpa;
+        temp.querySelector('.department').classList.toggle('grey', shownData[i].level !== 3);
         tableBody.appendChild(temp);
         temp.querySelector('.department').addEventListener('click', function(){showDepartmentOverlay(i)});
         temp.querySelector('.delete').addEventListener('click', function(){showDeleteOverlay(i)});
@@ -76,7 +77,7 @@ function filterTable()
     else
     {
         shownData = fullData.filter(student => {
-            if (student.active){
+            if (student.status){
                 return student;
             }
         });
