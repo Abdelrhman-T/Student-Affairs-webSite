@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SignUp</title>
+    <style>
+        /*Style the navigation bar*/
+
+        /* styling the container elly howa el navbar */
+
+    nav   
+    {
+            background-color: #8dc5d2;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            padding: 0 20px;
+    }
+      /* styling el items eli fe el navbar */
+    nav a 
+    {
+            display: block;
+            color: rgb(0, 0, 0);
+            padding: 14px 12px;
+            font-weight: bold;
+            text-decoration: none;
+    }
+    /* styling el list elly 4ayla el items */
+    nav ul 
+    {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+    }
+    /* hena ba3mel el green color elly wara el active item */
+    nav a.active 
+    {
+            background-color: #4CAF50;
+    }
+        
+      
+        /* Style the logo */
+    .logo 
+    {
+            color: #fff;
+            width: 180px;
+    }
+
+    </style>
+</head>
+<body>
+
+    <!-- The navigation bar -->
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="Add_student.html">Add Student</a></li>
+            <li><a href="Update_student.html">Update Student</a></li>
+            <li><a href="search_student.html">Search for Students</a></li>
+            <li><a href="show_students.html">View All Students</a></li>
+            <li><a href="SignIn.html">SignIn</a></li>
+            <li><a href="SignUp.html" class="active">SignUp</a></li>
+        </ul>
+        <a href="home.html">
+            <img src="/Resources/src.png" alt="Student Affairs" width="180px" height="46">
+        </a>
+    </nav>
+
+    
+    <h1>SignUp For Administator</h1>
+
+	<!-- Affairs Officer details form -->
+
+	<form>
+		<label for="name">Name:</label>
+        <br>
+		<input type="text" id="name" name="name" value="John Doe">
+      
+        <hr>
+        <label for="Email">Email:</label>
+        <br>
+		<input type="text" id="Email" name="Email" value="examplexxx@fcai.com">
+      
+        <hr>
+        <label for="phone">Phone Number:</label>
+        <br>
+        <input type="text" id="phone" name="Phone Number">
+        <hr>
+
+        <label for="birthday">Date:</label>
+        <input type="date" id="birthday" name="birthday">
+       
+        <hr>
+        <label for="gender">gender:</label>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <hr>
+
+		<input type="submit" value="submit">
+	</form>
+    
+	
+</body>
+</html>
