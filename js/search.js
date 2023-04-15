@@ -37,10 +37,6 @@ function fillTable(){
     for (let i = start; i < shownData.length && (i - start) < amount; i++)
     {
         temp = rowTemplate.content.cloneNode(true).children[0];
-<<<<<<< HEAD
-=======
-        temp.setAttribute('data-value', shownData[i].id);
->>>>>>> f35b57b445be98a313cfac644c36e1eef63a8c11
         rowData = temp.querySelectorAll('td');
         rowData[0].textContent = shownData[i].name;
         rowData[1].textContent = shownData[i].id;
@@ -120,16 +116,11 @@ function showDeleteOverlay(index)
     document.querySelector('#student-id').textContent = id;
     let confirmDeletebtn = document.querySelector('#confirm-delete-btn');
     confirmDeletebtn.setAttribute('student-id', id);
-<<<<<<< HEAD
     confirmDeletebtn.addEventListener('click', deleteStudent);
-=======
-    confirmDeletebtn.addEventListener('click', function(){deleteStudent(id)});
->>>>>>> f35b57b445be98a313cfac644c36e1eef63a8c11
     showOverlay();
 }
 
 
-<<<<<<< HEAD
 function deleteStudent(){
     let confirmDeletebtn = document.querySelector('#confirm-delete-btn');
     let id = confirmDeletebtn.getAttribute('student-id');
@@ -158,17 +149,6 @@ function deleteStudent(){
 }
 //////////////////////////////////////////////////////////////////////////
 
-=======
-function deleteStudent(id){
-    fullData = fullData.filter(element => element.id !== id);
-    window.localStorage.setItem("data", JSON.stringify(fullData));
-    filterTable();
-    hideOverlay();
-}
-//////////////////////////////////////////////////////////////////////////
-    
-    
->>>>>>> f35b57b445be98a313cfac644c36e1eef63a8c11
 fillTable();
 
 leftBtn.addEventListener('click', function(){updateTable(true)});
