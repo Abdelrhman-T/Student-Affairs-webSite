@@ -1,140 +1,128 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Student Affairs - Update Student</title>
-    <style>
-      /*Style the navigation bar*/
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Student Affairs</title>
+      <link rel="stylesheet" href="css/common.css" />
+      <link rel="stylesheet" href="css/updatestudent.css" />
+  
+      <!-- Google Web Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;800&display=swap"
+        rel="stylesheet"
+      />
+  
+      <!-- FontAwsom icons -->
+      <script
+        src="https://kit.fontawesome.com/cc1bd84a2e.js"
+        crossorigin="anonymous"
+      ></script>
+    </head>
+    <body>
+      <header>
+        
+        <nav>
+          <ul>
+            <li ><a href="home.html">Home</a></li>
+            <li><a href="Add_student.html">Add Student</a></li>
+            <li class="active"><a href="Update_student.html">Update Student</a></li>
+            <li><a href="search_student.html">Search for Students</a></li>
+            <li><a href="show_students.html">View All Students</a></li>
+            <li><a href="SignIn.html">SignIn</a></li>
+          </ul>
+          <a href="home.html">
+            <img
+              src="Resources/src.png"
+              alt="Student Affairs"
+              width="180px"
+              height="46"
+            />
+          </a>
+        </nav>
 
-      /* styling the container elly howa el navbar */
 
-      nav {
-        background-color: #8dc5d2;
-        height: 50px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 20px;
-      }
-      /* styling el items eli fe el navbar */
-      nav a {
-        display: block;
-        color: rgb(0, 0, 0);
-        padding: 14px 12px;
-        font-weight: bold;
-        text-decoration: none;
-      }
-      /* styling el list elly 4ayla el items */
-      nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-      }
-      /* hena ba3mel el green color elly wara el active item */
-      nav a.active {
-        background-color: #4caf50;
-      }
-
-      /* Style the logo */
-      .logo {
-        color: #fff;
-        width: 180px;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- The navigation bar -->
-    <nav>
-      <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="Add_student.html">Add Student</a></li>
-        <li><a href="Update_student.html" class="active">Update Student</a></li>
-        <li><a href="search_student.html">Search for Students</a></li>
-        <li><a href="show_students.html">View All Students</a></li>
-        <li><a href="SignIn.html">SignIn</a></li>
-      </ul>
-      <a href="home.html">
-        <img
-          src="Resources/src.png"
-          alt="Student Affairs"
-          width="180px"
-          height="46"
-        />
-      </a>
-    </nav>
-
-    <h1>Update Student</h1>
-
-    <!-- Student details form -->
-
-    <form>
+<!-- Student details form -->
+<div class="formcontainer">
+  <form>
+    <div class="form-group">
       <label for="name">Name:</label>
-      <br />
       <input type="text" id="name" name="name" value="John Doe" disabled />
-      <button type="button">Edit</button><br />
-      <hr />
-      <label for="name">Email:</label>
-      <br />
-      <input
-        type="text"
-        id="Email"
-        name="Email"
-        value="example@example.com"
-        disabled
-      />
-      <button type="button">Edit</button><br />
-      <hr />
-      <label for="name">Phone Number:</label>
-      <br />
-      <input
-        type="text"
-        id="phone"
-        name="phone"
-        value="+20110000000"
-        disabled
-      />
-      <button type="button">Edit</button><br />
-      <hr />
-
+      <button type="button" class="btn-edit">Edit</button>
+    </div>
+  
+    <div class="form-group">
+      <label for="Email">Email:</label>
+      <input type="text" id="Email" name="Email" value="example@example.com" disabled />
+      <button type="button" class="btn-edit">Edit</button>
+    </div>
+  
+    <div class="form-group">
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" name="phone" value="+20110000000" disabled />
+      <button type="button" class="btn-edit">Edit</button>
+    </div>
+  
+    <div class="form-group">
       <label for="id">ID:</label>
-      <br />
       <input type="text" id="id" name="id" value="1234567" disabled />
-      <button type="button">Edit</button><br />
-      <hr />
+      <button type="button" class="btn-edit">Edit</button>
+    </div>
+  
+    <div class="form-group">
       <label for="gpa">GPA:</label>
-      <br />
       <input type="text" id="gpa" name="gpa" value="3.5" disabled />
-      <button type="button">Edit</button><br />
-      <hr />
-      <label for="department">Level:</label>
+      <button type="button" class="btn-edit">Edit</button>
+    </div>
+  
+    <div class="form-group">
+      <label for="levels">Level:</label>
       <select name="levels" id="levels" disabled>
-        <option value="Do nothing">Choose Level</option>
+        <option value="">Choose Level</option>
         <option value="cs">Level 1</option>
         <option value="ds">Level 2</option>
         <option value="is">Level 3</option>
         <option value="ai">Level 4</option>
       </select>
-      <button type="button">Edit</button><br />
-
-      <hr />
-
-      <label for="status">status:</label>
-      <input type="radio" name="status" value="active" /> active
-      <input type="radio" name="status" value="inactive" /> inactive
-
-      <hr />
-
+      <button type="button" class="btn-edit">Edit</button>
+    </div>
+  
+    <div class="form-group">
+      <label for="status">Status:</label>
+      <div class="radio-group">
+        <label><input type="radio" name="status" value="active" />Active</label>
+        <label><input type="radio" name="status" value="inactive" />Inactive</label>
+      </div>
+    </div>
+  
+    <div class="form-group">
       <label for="department">Department:</label>
-      <select name="levels" id="department" disabled>
-        <option value="Do nothing">Choose department</option>
+      <select name="department" id="department" disabled>
+        <option value="">Choose department</option>
         <option value="cs">CS</option>
         <option value="ds">DS</option>
         <option value="is">IS</option>
         <option value="ai">AI</option>
       </select>
-      <hr />
+      <button type="button" class="btn-edit">Edit</button>
 
-      <input type="submit" value="Update Student" />
-    </form>
+    </div>
+  
+    <input type="submit" value="Update Student" />
+  </form>
+
+</div>
+<script src="js/data.js"></script>
+<script src="js/updatestudent.js"></script>
+
   </body>
 </html>

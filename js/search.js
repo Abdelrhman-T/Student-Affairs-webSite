@@ -37,7 +37,6 @@ function fillTable(){
     for (let i = start; i < shownData.length && (i - start) < amount; i++)
     {
         temp = rowTemplate.content.cloneNode(true).children[0];
-        temp.setAttribute('data-value', shownData[i].id);
         rowData = temp.querySelectorAll('td');
         rowData[0].textContent = shownData[i].name;
         rowData[1].textContent = shownData[i].id;
@@ -69,7 +68,7 @@ function filterTable()
     let searchValue = search.value.toLowerCase();
     if (searchValue){
         shownData = fullData.filter(student =>{
-            if (student.name.toLowerCase().includes(searchValue) || student.id.includes(searchValue)){
+            if (student.name.toLowerCase().includes(searchValue) || String(student.id).includes(searchValue)){
                 return student;
             }
         });
@@ -117,20 +116,39 @@ function showDeleteOverlay(index)
     document.querySelector('#student-id').textContent = id;
     let confirmDeletebtn = document.querySelector('#confirm-delete-btn');
     confirmDeletebtn.setAttribute('student-id', id);
-    confirmDeletebtn.addEventListener('click', function(){deleteStudent(id)});
+    confirmDeletebtn.addEventListener('click', deleteStudent);
     showOverlay();
 }
 
 
-function deleteStudent(id){
-    fullData = fullData.filter(element => element.id !== id);
-    window.localStorage.setItem("data", JSON.stringify(fullData));
-    filterTable();
+function deleteStudent(){
+    let confirmDeletebtn = document.querySelector('#confirm-delete-btn');
+    let id = confirmDeletebtn.getAttribute('student-id');
+    console.log(fullData);
+    for (let i = 0; i < fullData.length; i++)
+    {
+        if (fullData[i].id === id)
+        {
+            delete fullData[i];
+            break;
+        }
+    }
+    fullData = fullData.filter(element => element !== undefined);
+    shownData = fullData.filter(student => {
+        if (student.status){
+            return student;
+        }
+    });
+    if (search.value)
+    {
+        filterTable();
+    }
     hideOverlay();
+    fillTable();
+
 }
 //////////////////////////////////////////////////////////////////////////
-    
-    
+
 fillTable();
 
 leftBtn.addEventListener('click', function(){updateTable(true)});
