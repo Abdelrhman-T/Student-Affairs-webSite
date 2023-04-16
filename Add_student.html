@@ -1,137 +1,147 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Student Affairs - Add New Student</title>
-    <style>
-      /*Style the navigation bar*/
+<html lang="en">
 
-      /* styling the container elly howa el navbar */
+<head>
+  <style>
+    body {
+      background-image: url('blurd.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      background-size: cover;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+  </style>
+  <meta charset="UTF-8" />
+  <title>Add New Student</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/Add_student.css" />
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;800&display=swap" rel="stylesheet" />
+  <!-- FontAwsom icons -->
+  <script src="https://kit.fontawesome.com/cc1bd84a2e.js" crossorigin="anonymous"></script>
+</head>
 
-      nav {
-        background-color: #8dc5d2;
-        height: 50px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        padding: 0 20px;
-      }
-      /* styling el items eli fe el navbar */
-      nav a {
-        display: block;
-        color: rgb(0, 0, 0);
-        padding: 14px 12px;
-        font-weight: bold;
-        text-decoration: none;
-      }
-      /* styling el list elly 4ayla el items */
-      nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-      }
-      /* hena ba3mel el green color elly wara el active item */
-      nav a.active {
-        background-color: #4caf50;
-      }
-
-      /* Style the logo */
-      .logo {
-        color: #fff;
-        width: 180px;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- The navigation bar -->
+<body>
+  <header>
     <nav>
       <ul>
         <li><a href="home.html">Home</a></li>
-        <li><a href="Add_student.html" class="active">Add Student</a></li>
-        <li><a href="Update_student.html">Update Student</a></li>
+        <li class="active">
+          <a href="Add_student.html">Add Student</a>
+        </li>
         <li><a href="search_student.html">Search for Students</a></li>
         <li><a href="show_students.html">View All Students</a></li>
-        <li><a href="Signed_in.html">SignIn</a></li>
+        <li><a href="SignIn.html">Sign Out</a></li>
       </ul>
       <a href="home.html">
-        <img
-          src="Resources/src.png"
-          alt="Student Affairs"
-          width="180px"
-          height="46"
-        />
+        <img src="Resources/src.png" alt="Student Affairs" width="180px" height="46" />
       </a>
     </nav>
+  </header>
+  <br />
+  <br />
+  <br />
+  <br />
+  <!-- <h1>Add New Student</h1> -->
 
-    <h1>Add New Student</h1>
+  <!-- Student details form -->
 
-    <!-- Student details form -->
+  <div class="login-box">
+    <div class="box">
+      <form>
+        <div class="inputBox">
+          <input type="Name" name="Name" required onkeyup="this.setAttribute('value', this.value);" value="">
+          <label>Name</label>
+        </div>
 
-    <form>
-      <label for="name">Name:</label>
-      <br />
-      <input type="text" id="name" name="name" value="John Doe" />
 
-      <hr />
-      <label for="Email">Email:</label>
-      <br />
-      <input type="text" id="Email" name="Email" value="examplexxx@fcai.com" />
+        <div class="inputBox">
+          <input type="Email" name="Email" required onkeyup="this.setAttribute('value', this.value);" value="">
+          <label>Email</label>
+        </div>
 
-      <hr />
-      <label for="phone">Phone Number:</label>
-      <br />
-      <input type="text" id="phone" name="phone" value="010xxxxxx05" />
 
-      <hr />
-      <label for="id">ID:</label>
-      <br />
-      <input type="text" id="id" name="id" value="1234567" />
+        <div class="inputBox">
+          <input type="PhoneNumber" name="PhoneNumber" required onkeyup="this.setAttribute('value', this.value);"
+            value="">
+          <label>Phone Number</label>
+        </div>
 
-      <hr />
-      <label for="gpa">GPA:</label>
-      <br />
-      <input type="text" id="gpa" name="gpa" value="3.5" />
 
-      <hr />
-      <label for="level"> level:</label>
-      <select name="levels" id="levels">
-        <option value="Do nothing">...</option>
-        <option value="level 1">First year</option>
-        <option value="level 2">Second year</option>
-        <option value="level 3">Third year</option>
-        <option value="level 4">Fourth year</option>
-      </select>
+        <div class="inputBox">
+          <input type="ID" name="ID" required onkeyup="this.setAttribute('value', this.value);" value="">
+          <label>ID</label>
+        </div>
 
-      <hr />
-      <label for="status">status:</label>
-      <input type="radio" name="status" value="active" /> active
-      <input type="radio" name="status" value="inactive" /> inactive
 
-      <hr />
-      <label for="department">Department:</label>
+        <div class="inputBox">
+          <input type="GPA" name="GPA" required onkeyup="this.setAttribute('value', this.value);" value="">
+          <label>GPA</label>
+        </div>
 
-      <select name="department" id="department">
-        <option value="Do nothing">...</option>
-        <option value="CS">CS</option>
-        <option value="IS">IS</option>
-        <option value="IT">IT</option>
-        <option value="AI">AI</option>
-        <option value="DS">DS</option>
-      </select>
+        <select name="levels" id="levels">
+          <option value="Do nothing">--Choose a level--</option>
+          <option value="level 1">First year</option>
+          <option value="level 2">Second year</option>
+          <option value="level 3">Third year</option>
+          <option value="level 4">Fourth year</option>
+        </select>
 
-      <hr />
+        <br />
 
-      <label for="birthday">Date:</label>
-      <input type="date" id="birthday" name="birthday" />
+        <label for="status">Status:</label>
+        <input type="radio" name="status" value="active" /> active
+        <br />
+        <input type="radio" name="status" value="inactive" /> inactive
 
-      <hr />
-      <label for="gender">gender:</label>
-      <input type="radio" name="gender" value="male" /> Male
-      <input type="radio" name="gender" value="female" /> Female
-      <hr />
+        <br />
+        <br />
 
-      <input type="submit" value="Add Student" />
-    </form>
-  </body>
+        <select name="department" id="department">
+          <option value="Do nothing">--Choose a Departement--</option>
+          <option value="CS">CS</option>
+          <option value="IS">IS</option>
+          <option value="IT">IT</option>
+          <option value="AI">AI</option>
+          <option value="DS">DS</option>
+        </select>
+
+        <br />
+
+        <label for="birthday">Date:</label>
+        <input type="date" id="birthday" name="birthday" />
+
+        <br />
+        <br />
+        <label for="gender">Gender:</label>
+        <input type="radio" name="gender" value="male" /> Male
+        <br />
+        <input type="radio" name="gender" value="female" /> Female
+        <br />
+        <br />
+        <br />
+        <a href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+
+          <input type="submit" value="Add Student" />
+        </a>
+      </form>
+    </div>
+  </div>
+</body>
+<br />
+
 </html>
