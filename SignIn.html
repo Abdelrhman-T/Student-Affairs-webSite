@@ -1,56 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="Sign-In student"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Sign In</title>
-    <style>
-      /*Style the navigation bar*/
-      /* styling the container elly howa el navbar */
-      nav {
-        background-color: #8dc5d2;
-        height: 50px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 20px;
-      }
 
-      /* styling el items eli fe el navbar */
-      nav a {
-        display: block;
-        color: rgb(0, 0, 0);
-        padding: 14px 12px;
-        font-weight: bold;
-        text-decoration: none;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="Sign-In student" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="SignIN.css">
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-      /* styling el list elly 4ayla el items */
-      nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-      }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;800&display=swap" rel="stylesheet">
 
-      /* hena ba3mel el green color elly wara el active item */
-      nav a.active {
-        background-color: #4caf50;
-      }
+  <title>Sign In</title>
+</head>
 
-      /* Style the logo */
-      .logo {
-        color: #fff;
-        width: 180px;
-      }
-    </style>
-  </head>
-
-  <body>
+<body>
+  <header>
     <nav>
       <ul>
         <li><a href="home.html">Home</a></li>
@@ -69,55 +38,23 @@
         />
       </a>
     </nav>
-
-    <div class="sign_student">
-      <div class="student_title">
-        <p><strong> Sign in as Studnet </strong></p>
+  </header>
+        
+      <div class="sign_administrator">
+          <div class="admin_title">
+            <h2> Sign in as an Administrator </h2>
+            </div>
+          
+          <div class="admin_body">
+              <form class="details">
+                <input type="text" id="admin_email" placeholder="E-mail" /><br />
+                <input type="password" id="admin_password" placeholder="Password" /><br />
+                <div class="button">
+                  <button type="submit" onclick="window.location.href='home.html'">Sign-in</button>
+                </div>
+              </form>
+            </div>
       </div>
-
-      <div class="student_body">
-        <form action="">
-          <label for="student_id">ID </label>
-          <input
-            type="text"
-            id="student_id"
-            placeholder="Enter your ID"
-          /><br />
-          <label for="student_password">password </label>
-          <input
-            type="password"
-            id="student_password"
-            placeholder="Enter your Password"
-          /><br />
-          <button type="submit">Enter</button>
-        </form>
-      </div>
-      <hr />
-    </div>
-
-    <div class="sign_administator">
-      <div class="admin_title">
-        <p>
-          <strong> Sign in as administator </strong>
-        </p>
-      </div>
-      <div class="admin_body">
-        <form action="">
-          <label for="admin_email">E-mail </label>
-          <input
-            type="text"
-            id="admin_email"
-            placeholder="Enter your E-mail"
-          /><br />
-          <label for="admin_password">password </label>
-          <input
-            type="password"
-            id="admin_password"
-            placeholder="Enter your Password"
-          /><br />
-          <button type="submit">Enter</button>
-        </form>
-      </div>
-    </div>
   </body>
-</html>
+  
+  </html>
