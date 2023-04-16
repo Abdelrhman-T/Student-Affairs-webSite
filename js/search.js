@@ -68,7 +68,7 @@ function filterTable()
     let searchValue = search.value.toLowerCase();
     if (searchValue){
         shownData = fullData.filter(student =>{
-            if (student.name.toLowerCase().includes(searchValue) || student.id.includes(searchValue)){
+            if (student.name.toLowerCase().includes(searchValue) || String(student.id).includes(searchValue)){
                 return student;
             }
         });
