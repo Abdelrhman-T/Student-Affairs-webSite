@@ -36,15 +36,15 @@
     <br><br>
     <!-- filter the shown students according to year, department and status-->
     <div class = "filter">
-    <form>
+    <form id = "table_form">
       
       <label for="year"><b>Select Year</b></label>
       <select id="year" name="year">
         <option value="All">All</option>
-        <option value="First Year">First Year</option>
-        <option value="Second Year">Second Year</option>
-        <option value="Third Year">Third Year</option>
-        <option value="Fourth Year">Fourth Year</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
       </select>
       
 
@@ -61,8 +61,8 @@
       <label for="Status"><b>Select Status</b></label>
       <select id="Status" name="Status">
         <option value="All">All</option>
-        <option value="Active">Active</option>
-        <option value="Inactive">Inactive</option>
+        <option value="true">true</option>
+        <option value="false">false</option>
       </select>
     </form>
     </div>
@@ -75,7 +75,7 @@
       <section class="table__header">
           <h1>Students</h1>
           <div class="input-group">
-              <input type="search" placeholder="Search Data...">
+              <input type="search" placeholder="Search Data..." class = "searchBar">
               <img src="Resources/search-icon.png" alt="">
           </div>
           
@@ -96,32 +96,9 @@
                     <th >Mobile Number</th>
                   </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>20210001</td>
-                  <td>Ali salem mahmoud farahat</td>
-                  <td>3.5</td>
-                  <td>CS</td>
-                  <td>First Year</td>
-                  <td> <p class="Sactive">Active</p>
-                  </td>
-                  <td>M</td>
-                  <td>alisalem1@gmail.com</td>
-                  <td>1999-01-01</td>
-                  <td>01000000000</td>
-                  </tr>
-                  <tr>
-                  <td>20210002</td>
-                  <td>tayseer abdelqader abdelhameed mahjoub</td>
-                  <td>3.3</td>
-                  <td>IS</td>
-                  <td>Second Year</td>
-                  <td> <p class="Sinactive">Inactive</p></td>
-                  <td>F</td>
-                  <td>tayseerabdelqader5@gmail.com</td>
-                  <td>1998-01-01</td>
-                  <td>01000000000</td>
-                  </tr>
+              <tbody id = "tbody">
+                
+                  
                   
               </tbody>
           </table>
@@ -169,6 +146,10 @@
         <p>&copy; 2023 Student Affairs Website. All rights reserved.</p>
       </div>
     </footer>
+
+    <script src="../Webproject/js/show_students.js"></script>
+    <script src = "../Webproject/js/data.js"></script>
+
 
   </body>
 </html>

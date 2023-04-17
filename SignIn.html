@@ -36,6 +36,7 @@
 </head>
 
 <body>
+  <script src="js/SignIN.js"></script>
   <header>
     <nav>
       <ul>
@@ -58,11 +59,11 @@
     </div>
 
     <div class="admin_body">
-      <form class="details" action="home.html" method="post">
-        <input type="text" id="admin_email" placeholder="E-mail" /><br />
-        <input type="password" id="admin_password" placeholder="Password" /><br />
+      <form class="details" id="" action="home.html" method="post">
+        <input type="text" id="admin_email" placeholder="E-mail" required/><br />
+        <input type="password" id="admin_password" placeholder="Password" required /><br />
         <div class="button">
-          <button type="submit" onclick="window.location.href='home.html'">
+          <button type="submit" onclick="return validateForm()">
             Sign-in
           </button>
         </div>
