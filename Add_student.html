@@ -58,35 +58,41 @@
 
   <div class="login-box">
     <div class="box">
-      <form>
+      <form id="form" action="/">
         <div class="inputBox">
-          <input type="Name" name="Name" required onkeyup="this.setAttribute('value', this.value);" value="">
+          <input type="Name" name="Name" id="Name" required onkeyup="this.setAttribute('value', this.value);" value="">
           <label>Name</label>
+          <div class="error"></div>
         </div>
 
 
         <div class="inputBox">
-          <input type="Email" name="Email" required onkeyup="this.setAttribute('value', this.value);" value="">
-          <label>Email</label>
-        </div>
-
-
-        <div class="inputBox">
-          <input type="PhoneNumber" name="PhoneNumber" required onkeyup="this.setAttribute('value', this.value);"
+          <input type="Email" name="Email" id="Email" required onkeyup="this.setAttribute('value', this.value);"
             value="">
-          <label>Phone Number</label>
+          <label>Email</label>
+          <div class="error"></div>
         </div>
 
 
         <div class="inputBox">
-          <input type="ID" name="ID" required onkeyup="this.setAttribute('value', this.value);" value="">
+          <input type="PhoneNumber" name="PhoneNumber" id="Phone Number" required
+            onkeyup="this.setAttribute('value', this.value);" value="">
+          <label>Phone Number</label>
+          <div class="error"></div>
+        </div>
+
+
+        <div class="inputBox">
+          <input type="ID" name="ID" id="ID" required onkeyup="this.setAttribute('value', this.value);" value="">
           <label>ID</label>
+          <div class="error"></div>
         </div>
 
 
         <div class="inputBox">
           <input type="GPA" name="GPA" required onkeyup="this.setAttribute('value', this.value);" value="">
           <label>GPA</label>
+          <div class="error"></div>
         </div>
 
         <select name="levels" id="levels">
@@ -95,14 +101,16 @@
           <option value="level 2">Second year</option>
           <option value="level 3">Third year</option>
           <option value="level 4">Fourth year</option>
+          <div class="error"></div>
         </select>
 
         <br />
 
-        <label for="status">Status:</label>
+        <label id="Status" for="status">Status:</label>
         <input type="radio" name="status" value="active" /> active
         <br />
         <input type="radio" name="status" value="inactive" /> inactive
+        <div class="error"></div>
 
         <br />
         <br />
@@ -114,19 +122,22 @@
           <option value="IT">IT</option>
           <option value="AI">AI</option>
           <option value="DS">DS</option>
+          <div class="error"></div>
         </select>
 
         <br />
 
         <label for="birthday">Date:</label>
         <input type="date" id="birthday" name="birthday" />
+        <div class="error"></div>
 
         <br />
         <br />
-        <label for="gender">Gender:</label>
+        <label id="Gender" for="gender">Gender:</label>
         <input type="radio" name="gender" value="male" /> Male
         <br />
         <input type="radio" name="gender" value="female" /> Female
+        <div class="error"></div>
         <br />
         <br />
         <br />
@@ -141,6 +152,8 @@
       </form>
     </div>
   </div>
+  <script src="js/data.js"></script>
+  <script src="js/add_student.js"></script>
 </body>
 <br />
 
