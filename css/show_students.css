@@ -241,6 +241,10 @@ thead th {
   cursor: pointer;
   text-transform: capitalize;
 }
+th{
+
+  width : 135px
+}
 .BirthD {
   width: 11%;
 }
