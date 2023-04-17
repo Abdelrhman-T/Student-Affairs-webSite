@@ -1,13 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 :root {
-<<<<<<< HEAD
   --primary: #06A3DA;
   --secondary: #34AD54;
   --light: #EEF9FF;
   --dark: #091E3E;
   --section-padding: 100px;
-=======
     --primary: #06A3DA;
     --secondary: #34AD54;
     --light: #EEF9FF;
@@ -94,16 +92,14 @@
   }
     
   /* End header */
->>>>>>> 0b659bdc32c177bfcb65b7485e8b7560acae01fb
 
-}
+
 
 html {
   scroll-behavior: smooth;
 }
 
 
-<<<<<<< HEAD
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -228,7 +224,7 @@ nav ul li a:hover {
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
-=======
+}
   .admin_body{
       position: relative;
       z-index: 1;
@@ -275,7 +271,6 @@ nav ul li a:hover {
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
->>>>>>> 0b659bdc32c177bfcb65b7485e8b7560acae01fb
 }
 
 .admin_body button:hover,
