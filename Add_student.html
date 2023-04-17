@@ -39,8 +39,6 @@
         <li class="active">
           <a href="Add_student.html">Add Student</a>
         </li>
-        <li><a href="Update_student.html">Update Student</a></li>
-
         <li><a href="search_student.html">Search for Students</a></li>
         <li><a href="show_students.html">View All Students</a></li>
         <li><a href="SignIn.html">Sign Out</a></li>
@@ -60,7 +58,7 @@
 
   <div class="login-box">
     <div class="box">
-      <form id="form" action="/">
+      <form id="form" action="home.html" method="post">
         <div class="inputBox">
           <input type="Name" name="Name" id="Name" required onkeyup="this.setAttribute('value', this.value);" value="">
           <label>Name</label>
@@ -92,7 +90,7 @@
 
 
         <div class="inputBox">
-          <input type="GPA" name="GPA" required onkeyup="this.setAttribute('value', this.value);" value="">
+          <input type="GPA" name="GPA" id="GPA" required onkeyup="this.setAttribute('value', this.value);" value="">
           <label>GPA</label>
           <div class="error"></div>
         </div>
@@ -109,9 +107,9 @@
         <br />
 
         <label id="Status" for="status">Status:</label>
-        <input type="radio" name="status" value="active" /> active
+        <input type="radio" name="status" value="active" id="active" /> active
         <br />
-        <input type="radio" name="status" value="inactive" /> inactive
+        <input type="radio" name="status" value="inactive" id="inactive" /> inactive
         <div class="error"></div>
 
         <br />
@@ -136,9 +134,9 @@
         <br />
         <br />
         <label id="Gender" for="gender">Gender:</label>
-        <input type="radio" name="gender" value="male" /> Male
+        <input type="radio" name="gender" value="male" id="Male" /> Male
         <br />
-        <input type="radio" name="gender" value="female" /> Female
+        <input type="radio" name="gender" value="female" id="Female" /> Female
         <div class="error"></div>
         <br />
         <br />
@@ -149,7 +147,7 @@
           <span></span>
           <span></span>
 
-          <input type="submit" value="Add Student" />
+          <input type="submit" value="Add Student" onclick="return validateForm()" />
         </a>
       </form>
     </div>
