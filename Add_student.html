@@ -95,7 +95,7 @@
           <div class="error"></div>
         </div>
 
-        <select name="levels" id="levels">
+        <select name="levels" id="levels" onchange="toggleDepartment(this);">
           <option value="Do nothing">--Choose a level--</option>
           <option value="level 1">First year</option>
           <option value="level 2">Second year</option>
@@ -114,16 +114,17 @@
 
         <br />
         <br />
-
-        <select name="department" id="department">
-          <option value="Do nothing">--Choose a Departement--</option>
-          <option value="CS">CS</option>
-          <option value="IS">IS</option>
-          <option value="IT">IT</option>
-          <option value="AI">AI</option>
-          <option value="DS">DS</option>
-          <div class="error"></div>
-        </select>
+        <div id="department-container">
+          <select name="department" id="department">
+            <option value="Do nothing">--Choose a Departement--</option>
+            <option value="CS">CS</option>
+            <option value="IS">IS</option>
+            <option value="IT">IT</option>
+            <option value="AI">AI</option>
+            <option value="DS">DS</option>
+            <div class="error"></div>
+          </select>
+        </div>
 
         <br />
 

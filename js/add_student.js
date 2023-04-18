@@ -14,8 +14,8 @@ function validateForm() {
     var selectElement1 = document.getElementById("levels");
     var selectedOptionIndex1 = selectElement1.selectedIndex;
     var selectedOptionValue1 = selectElement1.options[selectedOptionIndex1].value;
-
-
+    const birthday = document.getElementById("birthday").value;
+    let flag = 0;
 
     if (Name === "") {
         alert("name is required.");
@@ -30,6 +30,14 @@ function validateForm() {
         return false;
     } else if (!isValidEmail(email)) {
         alert("Please enter a valid email address.");
+        return false;
+    }
+
+    if (Phone === "") {
+        alert("Phone is required.");
+        return false;
+    } else if (!isValidPhone(Phone)) {
+        alert("Please enter a valid phone number.");
         return false;
     }
 
@@ -50,9 +58,9 @@ function validateForm() {
     }
 
     if (selectedOptionValue1 === "level 1") {
-
+        flag = 1;
     } else if (selectedOptionValue1 === "level 2") {
-
+        flag = 2;
     } else if (selectedOptionValue1 === "level 3") {
     } else if (selectedOptionValue1 === "level 4") {
 
@@ -61,13 +69,6 @@ function validateForm() {
         return false;
     }
 
-    if (Phone === "") {
-        alert("email is required.");
-        return false;
-    } else if (isValidEmail(Phone)) {
-        alert("Please enter a valid phone number.");
-        return false;
-    }
 
     if (radio1.checked) {
 
@@ -82,12 +83,16 @@ function validateForm() {
 
     } else if (selectedOptionValue === "IS") {
     } else if (selectedOptionValue === "IT") {
-
     } else if (selectedOptionValue === "AI") {
     } else if (selectedOptionValue === "DS") {
-
+    } else if (flag === 1) {
     } else {
         alert("No Department selected");
+        return false;
+    }
+
+    if (birthday === "") {
+        alert("Date not selected");
         return false;
     }
 
@@ -101,12 +106,21 @@ function validateForm() {
     }
 
 
-
-
-
-
     alert("Student added successfully.");
     return true;
+}
+
+function toggleDepartment(levelSelect) {
+    var departmentContainer = document.getElementById("department-container");
+    var departmentSelect = document.getElementById("department");
+
+    if (levelSelect.value === "level 3" || levelSelect.value === "level 4") {
+        departmentContainer.style.display = "block";
+        departmentSelect.required = true;
+    } else {
+        departmentContainer.style.display = "none";
+        departmentSelect.required = false;
+    }
 }
 
 function isValidEmail(email) {
