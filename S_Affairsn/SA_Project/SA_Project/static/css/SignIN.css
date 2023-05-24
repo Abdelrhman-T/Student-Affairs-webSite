@@ -1,3 +1,4 @@
+<<<<<<< HEAD:S_Affairsn/SA_Project/SA_Project/static/css/SignIN.css
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 :root {
@@ -278,3 +279,285 @@ nav ul li a:hover {
 .form button:focus {
   background: #06A3DA;
 }
+=======
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+:root {
+  --primary: #06A3DA;
+  --secondary: #34AD54;
+  --light: #EEF9FF;
+  --dark: #091E3E;
+  --section-padding: 100px;
+    --primary: #06A3DA;
+    --secondary: #34AD54;
+    --light: #EEF9FF;
+    --dark: #091E3E;
+    --section-padding: 100px;
+  
+  }
+  
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  
+  /* Global Styles */
+  body {
+    font-family: 'Kanit', sans-serif;
+    background-color: var(--light);
+    /* color: var(--dark); */
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    place-content: center;
+    }
+    
+  
+    a {
+      color: var(--light);
+      text-decoration: none;
+    }
+  
+  /* Header Styles */
+  
+    header {
+      position: fixed;
+      left: 0;
+      margin: auto;
+      z-index: 2;
+      width: 100%;
+      background-color: var(--dark);
+      color: var(--light);
+      padding: 10px;
+    }
+    
+  header nav {
+      display: flex;
+      flex: 1;
+      justify-content: space-around;
+      min-height: 52px;
+      align-items: center;
+    }
+    
+  header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+    
+  nav ul li {
+    display: inline-block;
+  }
+  
+  nav ul li a {
+    display: block;
+    padding: 10px;
+    transition: 0.5s;
+  }
+    
+  nav ul li a.active,
+  nav ul li a:hover {
+    background-color: var(--light);
+    color: var(--primary);
+    border-radius: 8px;
+    position: relative;
+    z-index: 3;
+  }
+    
+  /* End header */
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* Global Styles */
+body {
+  font-family: 'Kanit', sans-serif;
+  background-color: var(--light);
+  /* color: var(--dark); */
+}
+
+
+a {
+  color: var(--light);
+  text-decoration: none;
+}
+
+/* Header Styles */
+
+header {
+  position: fixed;
+  left: 0;
+  margin: auto;
+  z-index: 2;
+  width: 100%;
+  background-color: var(--dark);
+  color: var(--light);
+  padding: 10px;
+}
+
+header nav {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  min-height: 52px;
+  align-items: center;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px;
+  transition: 0.5s;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  background-color: var(--light);
+  color: var(--primary);
+  border-radius: 8px;
+  position: relative;
+  z-index: 3;
+}
+
+/* End header */
+
+.sign_administrator {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+
+.admin_title {
+  z-index: 1;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: bolder;
+  padding-top: 15px;
+  padding-bottom: 25px;
+
+}
+
+
+.admin_body {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.admin_body input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.admin_body button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #06A3DA;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+  .admin_body{
+      position: relative;
+      z-index: 1;
+      background: #FFFFFF;
+      height: 300px;
+      max-width: 360px;
+      margin: 0 auto 100px;
+      padding: 45px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  }
+
+.admin_body input{
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    outline: none;
+    margin: 10px 0 10px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition-duration: .5s;
+  }
+  .admin_body input:focus
+  {
+  border-bottom: 3px #091e3e solid;
+  transition: .1s;
+}
+.admin_body button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #06A3DA;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+      margin-top: 25px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
+.admin_body button:hover,
+.form button:active,
+.form button:focus {
+  background: #06A3DA;
+}
+>>>>>>> 34e68446aa0e5be27607c7a1407b4fbada7f7b16:css/SignIN.css
