@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    body {
+      background-image: url('blurd.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      background-size: cover;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+  </style>
+  <meta charset="UTF-8" />
+  <title>Add New Student</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/Add_student.css" />
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;800&display=swap" rel="stylesheet" />
+  <!-- FontAwsom icons -->
+  <script src="https://kit.fontawesome.com/cc1bd84a2e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="home">Home</a></li>
+        <li class="active">
+          <a href="Add_student">Add Student</a>
+        </li>
+        <li><a href="search_student">Search for Students</a></li>
+        <li><a href="show_students">View All Students</a></li>
+        <li><a href="SignIn">Sign Out</a></li>
+      </ul>
+      <a href="home">
+        <img src="Resources/src.png" alt="Student Affairs" width="180px" height="46" />
+      </a>
+    </nav>
+  </header>
+  <br />
+  <br />
+  <br />
+  <br />
+  <!-- <h1>Add New Student</h1> -->
+
+  <!-- Student details form -->
+
+  <div class="login-box">
+    <div class="box">
+      <form id="form" action="home.html" method="post">
+        <div class="inputBox">
+          <input type="Name" name="Name" id="Name" required onkeyup="this.setAttribute('value', this.value);" value="">
+          <label>Name</label>
+          <div class="error"></div>
+        </div>
+
+
+        <div class="inputBox">
+          <input type="Email" name="Email" id="Email" required onkeyup="this.setAttribute('value', this.value);"
+            value="">
+          <label>Email</label>
+          <div class="error"></div>
+        </div>
+
+
+        <div class="inputBox">
+          <input type="PhoneNumber" name="PhoneNumber" id="Phone Number" required
+            onkeyup="this.setAttribute('value', this.value);" value="">
+          <label>Phone Number</label>
+          <div class="error"></div>
+        </div>
+
+
+        <div class="inputBox">
+          <input type="ID" name="ID" id="ID" required onkeyup="this.setAttribute('value', this.value);" value="">
+          <label>ID</label>
+          <div class="error"></div>
+        </div>
+
+
+        <div class="inputBox">
+          <input type="GPA" name="GPA" id="GPA" required onkeyup="this.setAttribute('value', this.value);" value="">
+          <label>GPA</label>
+          <div class="error"></div>
+        </div>
+
+        <select name="levels" id="levels" onchange="toggleDepartment(this);">
+          <option value="Do nothing">--Choose a level--</option>
+          <option value="level 1">First year</option>
+          <option value="level 2">Second year</option>
+          <option value="level 3">Third year</option>
+          <option value="level 4">Fourth year</option>
+          <div class="error"></div>
+        </select>
+
+        <br />
+
+        <label id="Status" for="status">Status:</label>
+        <input type="radio" name="status" value="active" id="active" /> active
+        <br />
+        <input type="radio" name="status" value="inactive" id="inactive" /> inactive
+        <div class="error"></div>
+
+        <br />
+        <br />
+        <div id="department-container">
+          <select name="department" id="department">
+            <option value="Do nothing">--Choose a Departement--</option>
+            <option value="CS">CS</option>
+            <option value="IS">IS</option>
+            <option value="IT">IT</option>
+            <option value="AI">AI</option>
+            <option value="DS">DS</option>
+            <div class="error"></div>
+          </select>
+        </div>
+
+        <br />
+
+        <label for="birthday">Date:</label>
+        <input type="date" id="birthday" name="birthday" />
+        <div class="error"></div>
+
+        <br />
+        <br />
+        <label id="Gender" for="gender">Gender:</label>
+        <input type="radio" name="gender" value="male" id="Male" /> Male
+        <br />
+        <input type="radio" name="gender" value="female" id="Female" /> Female
+        <div class="error"></div>
+        <br />
+        <br />
+        <br />
+        <a href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+
+          <input type="submit" value="Add Student" onclick="return validateForm()" />
+        </a>
+      </form>
+    </div>
+  </div>
+  <script src="js/data.js"></script>
+  <script src="js/add_student.js"></script>
+</body>
+<br />
+
+</html>
