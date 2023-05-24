@@ -1,0 +1,160 @@
+<!-- {% load static %} -->
+<!-- <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+<link rel="stylesheet" href="{% static 'css/common.css' %}" /> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Affairs</title>
+  <link rel="stylesheet" href="static/css/common.css" />
+  <link rel="stylesheet" href="static/css/home.css" />
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;800&display=swap" rel="stylesheet" />
+
+  <!-- FontAwsom icons -->
+  <script src="https://kit.fontawesome.com/cc1bd84a2e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li class="active"><a href="home">Home</a></li>
+        <li><a href="add_student">Add Student</a></li>
+        <li><a href="Update_student">Update Student</a></li>
+        <li><a href="search_student">Search for Students</a></li>
+        <li><a href="show_students">View All Students</a></li>
+        <li><a href="SignIn">SignIn</a></li>
+      </ul>
+      <a href="home">
+        <img src="/static/images/logo.png" alt="Student Affairs" width="180px" height="46" />
+      </a>
+    </nav>
+    <div class="welcome">
+      <h1>Welcome to our Student Affairs Website</h1>
+      <p>
+        Our platform is designed to help you manage student information in an
+        efficient and organized manner.
+        <br />
+        With our easy-to-use functionalities, you can add, update, and delete
+        student information, search for active students by name, and assign
+        departments to students who meet the required criteria.
+      </p>
+    </div>
+  </header>
+  <section class="services pad">
+    <div class="main-heading">
+      <h2>Services</h2>
+      <p>Platform offers the following minimum functionalities</p>
+    </div>
+    <div class="srv-content">
+      <div class="srv-box" service-tip="You can easily add a new student to our system.">
+        <div class="service">
+          <i class="fa-solid fa-circle-plus icon"></i>
+          <div class="text">
+            <h3>Add New Student</h3>
+            <!-- <p>You can easily add a new student to our system.</p> -->
+          </div>
+        </div>
+      </div>
+      <div class="srv-box" service-tip="You can update a student's information.">
+        <div class="service">
+          <i class="fa-solid fa-pen-to-square edit icon"></i>
+          <div class="text">
+            <h3>Update Existing Student Information</h3>
+            <!-- <p>You can update a student's information.</p> -->
+          </div>
+        </div>
+      </div>
+      <div class="srv-box" service-tip="You can delete an existing student's data.">
+        <div class="service">
+          <i class="fa-solid fa-trash-can delete icon"></i>
+          <div class="text">
+            <h3>Delete Student Data</h3>
+            <!-- <p>You can delete an existing student's data.</p> -->
+          </div>
+        </div>
+      </div>
+      <div class="srv-box" service-tip="You can search for active students by name.">
+        <div class="service">
+          <i class="fa-solid fa-magnifying-glass icon"></i>
+          <div class="text">
+            <h3>Search for Active Students</h3>
+            <!-- <p>You can search for active students by name.</p> -->
+          </div>
+        </div>
+      </div>
+      <div class="srv-box" service-tip="You can view all active/inactive students.">
+        <div class="service">
+          <i class="fa-solid fa-eye icon"></i>
+          <div class="text">
+            <h3>View All Students</h3>
+            <!-- <p>You can view all active/inactive students.</p> -->
+          </div>
+        </div>
+      </div>
+      <div class="srv-box" service-tip="You can change the status of a student .">
+        <div class="service">
+          <i class="fa-solid fa-toggle-off icon"></i>
+          <div class="text">
+            <h3>Change Student Status</h3>
+            <!-- <p>You can change the status of a student .</p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="sections">
+      <div class="d1">
+        <h3>Get In Touch</h3>
+        <p>
+          Contact us at:
+          <a href="mailto:xxxxxxxxxxxxxxxxxxxx">xxxxxxxxxxxxxxxxxxxx</a>
+        </p>
+        <p>Follow us on social media:</p>
+        <p>
+          <a href="#">Facebook</a> | <a href="#">Twitter</a> |
+          <a href="#">Instagram</a>
+        </p>
+      </div>
+      <div class="d2">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="home.html" class="active">Home</a></li>
+          <li><a href="Add_student.html">Add Student</a></li>
+          <li><a href="Update_student.html">Update Student</a></li>
+          <li><a href="search_student.html">Search for Students</a></li>
+          <li><a href="show_students.html">View All Students</a></li>
+          <li><a href="SignIn.html">SignIn</a></li>
+        </ul>
+      </div>
+      <div class="d3">
+        <h3>Popular Links</h3>
+        <ul>
+          <li><a href="home.html" class="active">Home</a></li>
+          <li><a href="Add_student.html">Add Student</a></li>
+          <li><a href="Update_student.html">Update Student</a></li>
+          <li><a href="search_student.html">Search for Students</a></li>
+          <li><a href="show_students.html">View All Students</a></li>
+          <li><a href="SignIn.html">SignIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyR">
+      <p>&copy; 2023 Student Affairs Website. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+
+</html>
