@@ -85,7 +85,11 @@ function validateForm() {
     } else if (selectedOptionValue === "IT") {
     } else if (selectedOptionValue === "AI") {
     } else if (selectedOptionValue === "DS") {
+<<<<<<< HEAD
     } else if (flag === 2 || flag === 1) {
+=======
+    } else if (flag === 1) {
+>>>>>>> 69e53420f99c813afa67dab9d7838fb56ad57a28
     } else {
         alert("No Department selected");
         return false;
@@ -106,6 +110,10 @@ function validateForm() {
     }
 
 
+<<<<<<< HEAD
+=======
+    alert("Student added successfully.");
+>>>>>>> 69e53420f99c813afa67dab9d7838fb56ad57a28
     return true;
 }
 
