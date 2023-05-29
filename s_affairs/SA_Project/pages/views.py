@@ -97,5 +97,6 @@ def sign_out(request):
     return redirect('SignIn')
 
 #show all students
+@login_required(login_url='SignIn')
 def show_students(request):
     return render(request, 'pages/show_students.html', {"student": Student.objects.all()})
