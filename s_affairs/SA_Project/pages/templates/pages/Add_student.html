@@ -1,0 +1,203 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        background-image: url("{% static 'images/blurd.jpg' %}");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        background-size: cover;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <title>Add New Student</title>
+    <link rel="stylesheet" href="{% static 'css/common.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/Add_student.css' %}" />
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwsom icons -->
+    <script
+      src="https://kit.fontawesome.com/cc1bd84a2e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{% url 'main' %}">Home</a></li>
+          <li class="active">
+            <a href="{% url 'add_student' %}">Add Student</a>
+          </li>
+          <li><a href="{% url 'search_student' %}">Search for Students</a></li>
+          <li><a href="show_students">View All Students</a></li>
+          <li><a href="{% url 'sign_out' %}">Sign Out</a></li>
+        </ul>
+        <a href="home">
+          <img
+            src="{% static 'images/logo.png' %}"
+            alt="Student Affairs"
+            width="180px"
+            height="46"
+          />
+        </a>
+      </nav>
+    </header>
+    <br />
+    <br />
+    <br />
+    <br />
+    <!-- <h1>Add New Student</h1> -->
+
+    <!-- Student details form -->
+
+    <div class="login-box">
+      <div class="box">
+        <form id="form" action="{% url 'add_student' %}" method="post">
+          {% csrf_token %}
+          <div class="inputBox">
+            <input
+              type="text"
+              name="name"
+              id="Name"
+              required
+              onkeyup="this.setAttribute('value', this.value);"
+              value=""
+            />
+            <label>Name</label>
+            <div class="error"></div>
+          </div>
+
+          <div class="inputBox">
+            <input
+              type="email"
+              name="email"
+              id="Email"
+              required
+              onkeyup="this.setAttribute('value', this.value);"
+              value=""
+            />
+            <label>Email</label>
+            <div class="error"></div>
+          </div>
+
+          <div class="inputBox">
+            <input
+              type="tel"
+              name="phone_number"
+              id="Phone Number"
+              required
+              onkeyup="this.setAttribute('value', this.value);"
+              value=""
+            />
+            <label>Phone Number</label>
+            <div class="error"></div>
+          </div>
+
+          <div class="inputBox">
+            <input
+              type="text"
+              name="student_id"
+              id="ID"
+              required
+              onkeyup="this.setAttribute('value', this.value);"
+              value=""
+            />
+            <label>ID</label>
+            <div class="error"></div>
+          </div>
+
+          <div class="inputBox">
+            <input
+              type="text"
+              name="gpa"
+              id="GPA"
+              required
+              onkeyup="this.setAttribute('value', this.value);"
+              value=""
+            />
+            <label>GPA</label>
+            <div class="error"></div>
+          </div>
+
+          <select name="level" id="levels" onchange="toggleDepartment(this);">
+            <option value="">--Choose a level--</option>
+            <option value="1">First year</option>
+            <option value="2">Second year</option>
+            <option value="3">Third year</option>
+            <option value="4">Fourth year</option>
+          </select>
+
+          <br />
+
+          <label id="Status" for="status">Status:</label>
+          <input type="radio" name="status" value="active" id="active" /> active
+          <br />
+          <input type="radio" name="status" value="inactive" id="inactive" />
+          inactive
+          <div class="error"></div>
+
+          <br />
+          <br />
+          <div id="department-container">
+            <select name="department" id="department">
+              <option value="">--Choose a Department--</option>
+              <option value="CS">CS</option>
+              <option value="IS">IS</option>
+              <option value="IT">IT</option>
+              <option value="AI">AI</option>
+              <option value="DS">DS</option>
+            </select>
+          </div>
+
+          <br />
+
+          <label for="birthday">Date:</label>
+          <input type="date" id="birthday" name="birthday" />
+          <div class="error"></div>
+
+          <br />
+          <br />
+          <label id="Gender" for="gender">Gender:</label>
+          <input type="radio" name="gender" value="male" id="Male" /> Male
+          <br />
+          <input type="radio" name="gender" value="female" id="Female" /> Female
+          <div class="error"></div>
+          <br />
+          <br />
+          <br />
+          <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <input
+              type="submit"
+              value="Add Student"
+              onclick="return validateForm()"
+            />
+          </a>
+        </form>
+      </div>
+    </div>
+    <script src="{% static 'js/add_student.js' %}"></script>
+  </body>
+</html>

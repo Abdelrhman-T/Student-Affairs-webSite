@@ -1,0 +1,50 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/homepage.css' %}" />
+<link rel="stylesheet" href="{% static 'css/common.css' %}" />
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwsom icons -->
+    <script
+      src="https://kit.fontawesome.com/cc1bd84a2e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="button">
+        <a href="{% url 'SignIn' %}">Student Affairs</a>
+      </div>
+      <!-- <button><p></p></button>
+        <button><p></p></button>
+        <button><p></p></button> -->
+      <div class="button">
+        <a href="#">Human Resources</a>
+      </div>
+      <div class="button">
+        <a href="#">Higher studies</a>
+      </div>
+      <div class="button">
+        <a href="#">Laboratory tracking</a>
+      </div>
+    </div>
+  </body>
+</html>

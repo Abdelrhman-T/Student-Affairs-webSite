@@ -1,0 +1,179 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        background-image: url("{% static 'images/blurd.jpg' %}");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        background-size: cover;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <title>Add New Student</title>
+    <link rel="stylesheet" href="{% static 'css/common.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/Add_student.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/updatestudent.css' %}" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwsom icons -->
+    <script
+      src="https://kit.fontawesome.com/cc1bd84a2e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{% url 'main' %}">Home</a></li>
+          <li>
+            <a href="{% url 'add_student' %}">Add Student</a>
+          </li>
+          <li><a href="{% url 'search_student' %}">Search for Students</a></li>
+          <li><a href="show_students">View All Students</a></li>
+          <li><a href="{% url 'sign_out' %}">Sign Out</a></li>
+        </ul>
+        <a href="home">
+          <img
+            src="{% static 'images/logo.png' %}"
+            alt="Student Affairs"
+            width="180px"
+            height="46"
+          />
+        </a>
+      </nav>
+    </header>
+    <br />
+    <br />
+    <br />
+    <br />
+    <!-- <h1>Add New Student</h1> -->
+
+    <!-- Student details form -->
+    <div class="formcontainer">
+      <form>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value="{{ student.name }}"
+            disabled
+          />
+          <button type="button" class="btn-edit">Edit</button>
+        </div>
+
+        <div class="form-group">
+          <label for="Email">Email:</label>
+          <input
+            type="text"
+            id="Email"
+            name="Email"
+            value="{{ student.email }}"
+            disabled
+          />
+          <button type="button" class="btn-edit">Edit</button>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number:</label>
+          <input
+            type="text"
+            id="phone"
+            name="phone"
+            value="{{ student.phone_number }}"
+            disabled
+          />
+          <button type="button" class="btn-edit">Edit</button>
+        </div>
+
+        <div class="form-group">
+          <label for="id">ID:</label>
+          <input
+            type="text"
+            id="id"
+            name="id"
+            value="{{ student.student_id }}"
+            disabled
+          />
+          <button type="button" class="btn-edit">Edit</button>
+        </div>
+
+        <div class="form-group">
+          <label for="gpa">GPA:</label>
+          <input
+            type="text"
+            id="gpa"
+            name="gpa"
+            value="{{ student.gpa }}"
+            disabled
+          />
+          <button type="button" class="btn-edit">Edit</button>
+        </div>
+
+        <div class="form-group">
+          <label for="levels">Level:</label>
+          <select name="levels" id="levels" disabled>
+            <option value="">Choose Level</option>
+            <option value="cs">Level 1</option>
+            <option value="ds">Level 2</option>
+            <option value="is">Level 3</option>
+            <option value="ai">Level 4</option>
+          </select>
+          <button type="button" class="btn-edit">Edit</button>
+        </div>
+
+        <div class="form-group">
+          <label for="status">Status:</label>
+          <div class="radio-group">
+            <label
+              ><input type="radio" name="status" value="active" />Active</label
+            >
+            <label
+              ><input
+                type="radio"
+                name="status"
+                value="inactive"
+              />Inactive</label
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="department">Department:</label>
+          <select name="department" id="department" disabled>
+            <option value="">Choose department</option>
+            <option value="cs">CS</option>
+            <option value="ds">DS</option>
+            <option value="is">IS</option>
+            <option value="ai">AI</option>
+          </select>
+          <button type="button" class="btn-edit">Edit</button>
+        </div>
+
+        <input type="submit" value="Update Student" />
+      </form>
+    </div>
+    <script src="{% static 'js/updatestudent.js' %}"></script>
+  </body>
+</html>
