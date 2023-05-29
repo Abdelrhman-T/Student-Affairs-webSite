@@ -1,4 +1,4 @@
-function addData(){
+/*function addData(){
 
     let sysData = JSON.parse(localStorage.getItem("data")) || [];
     let table = document.querySelector("tbody");
@@ -30,33 +30,33 @@ function addData(){
 
 }
 
-addData();
+addData();*/
 //setTimeout(addData, 3000);
 
 
 
 document.querySelector(".searchBar").oninput = function(){
     
-        let search = this.value;
-        let table = document.querySelector("tbody");
-        let tr = table.getElementsByTagName("tr");
-    
-        for(x = 0; x < tr.length; x++){
-    
-            let td = tr[x].getElementsByTagName("td")[0];
-            if(td){
-    
-                let textValue = td.textContent || td.innerHTML;
-                if(textValue.indexOf(search) > -1){
-    
-                    tr[x].style.display = "";
-                }
-                else{
-    
-                    tr[x].style.display = "none";
-                }
+    let search = this.value;
+    let table = document.querySelector("tbody");
+    let tr = table.getElementsByTagName("tr");
+
+    for(x = 0; x < tr.length; x++){
+
+        let td = tr[x].getElementsByTagName("td")[0];
+        if(td){
+
+            let textValue = td.textContent || td.innerHTML;
+            if(textValue.indexOf(search) > -1){
+
+                tr[x].style.display = "";
+            }
+            else{
+
+                tr[x].style.display = "none";
             }
         }
+    }
 };
 
 
@@ -66,30 +66,30 @@ document.querySelector("#year").addEventListener("change", function(){filter()})
 
 function filter()
 {
-    let year = document.querySelector("#year").value;
-    let dep = document.querySelector("#DEP").value;
-    let status = document.querySelector("#Status").value;
+let year = document.querySelector("#year").value;
+let dep = document.querySelector("#DEP").value;
+let status = document.querySelector("#Status").value;
 
-    let select = this.value;
-    let table = document.querySelector("tbody");
-    let tr = table.getElementsByTagName("tr");
-    
-        for(x = 0; x < tr.length; x++){
+let select = this.value;
+let table = document.querySelector("tbody");
+let tr = table.getElementsByTagName("tr");
 
-            let tellYear = tr[x].getElementsByTagName("td")[4].innerHTML;
-            let tellDep = tr[x].getElementsByTagName("td")[3].innerHTML;
-            let tellStatus = tr[x].getElementsByTagName("td")[5].innerHTML;
+    for(x = 0; x < tr.length; x++){
 
-                
-                if((tellYear.indexOf(year) > -1 || year == "All") && (tellDep.indexOf(dep) > -1 || dep == "All") && (tellStatus.indexOf(status) > -1 || status == "All")){
-    
-                    tr[x].style.display = "";
-                }
-                else{
-    
-                    tr[x].style.display = "none";
-                }
+        let tellYear = tr[x].getElementsByTagName("td")[4].innerHTML;
+        let tellDep = tr[x].getElementsByTagName("td")[3].innerHTML;
+        let tellStatus = tr[x].getElementsByTagName("td")[5].innerHTML;
+
+            
+            if((tellYear.indexOf(year) > -1 || year == "All") && (tellDep.indexOf(dep) > -1 || dep == "All") && (tellStatus.indexOf(status) > -1 || status == "All")){
+
+                tr[x].style.display = "";
             }
-    
+            else{
+
+                tr[x].style.display = "none";
+            }
+        }
+
 
 }

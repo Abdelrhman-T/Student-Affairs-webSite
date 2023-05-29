@@ -9,4 +9,5 @@ urlpatterns = [
     path('update/<int:pk>/', views.update, name='update_student'),
     path('SignIn/', views.SignIn, name='SignIn'),
     path('SignOut/', views.sign_out, name='sign_out'),
+    path('show_students/', views.show_students, name='show_students'),
 ]

@@ -1,0 +1,171 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--<title>Student Affairs - view all students</title>-->
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="../../static/css/show_students.css">
+    <style>
+      
+    </style>
+  </head>
+  <body>
+    <!-- The navigation bar -->
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{% url 'main' %}">Home</a></li>
+          <li><a href="{% url 'add_student' %}">Add Student</a></li>
+          <li class="active">
+            <a href="{% url 'search_student' %}">Search for Students</a>
+          </li>
+
+          <li><a href="{% url 'show_students' %}">View All Students</a></li>
+          <li><a href="SignIn.html">Sign Out</a></li>
+        </ul>
+        <a href="home.html">
+          <img
+            src="{% static 'images/logo.png' %}"
+            alt="Student Affairs"
+            width="180px"
+            height="46"
+          />
+        </a>
+      </nav>
+    </header>
+    <br><br><br><br>
+
+    <!--<h1>Show Student</h1>-->
+    <br><br>
+    <!-- filter the shown students according to year, department and status-->
+    <div class = "filter">
+    <form id = "table_form">
+      
+      <label for="year"><b>Select Year</b></label>
+      <select id="year" name="year">
+        <option value="All">All</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+      
+
+      <label for="DEP"><b>Select Department</b></label>
+      <select id="DEP" name="DEP">
+        <option value="All">All</option>
+        <option value="AI">AI</option>
+        <option value="CS">CS</option>
+        <option value="DS">DS</option>
+        <option value="IS">IS</option>
+        <option value="IT">IT</option>
+      </select>
+
+      <label for="Status"><b>Select Status</b></label>
+      <select id="Status" name="Status">
+        <option value="All">All</option>
+        <option value="True">True</option>
+        <option value="False">False</option>
+      </select>
+    </form>
+    </div>
+
+    <br /><br />
+
+    <!--the table -->
+    <!---->
+    <main class="table">
+      <section class="table__header">
+          <h1>Students</h1>
+          <div class="input-group">
+              <input type="search" placeholder="Search Data..." class = "searchBar">
+              <img src="{% static 'images/search-icon.png' %}" alt=""/>
+          </div>
+          
+      </section>
+      <section class="table__body">
+          <table>
+              <thead>
+                  <tr>
+                    <th >ID</th>
+                    <th >Name</th>
+                    <th >GPA</th>
+                    <th >Department</th>
+                    <th >Level</th>
+                    <th class="Stat">Status</th>
+                    <th >Gender</th>
+                    <th >E-mail</th>
+                    <th class="BirthD">Birth Date</th>
+                    <th >Mobile Number</th>
+                  </tr>
+              </thead>
+              <tbody id = "tbody">
+                {% for x in student%}
+                  <tr>
+                    <td>{{x.student_id}}</td>
+                    <td>{{x.name}}</td>
+                    <td>{{x.gpa}}</td>
+                    <td>{{x.department}}</td>
+                    <td>{{x.level}}</td>
+                    <td> {{x.status}} </td>
+                    <td> {{x.gender}} </td>
+                    <td> {{x.email}}</td>
+                    <td> {{x.birthday}} </td>
+                    <td> {{x.phone_number}} </td>
+
+                  </tr>
+                  {% endfor %}
+                  
+              </tbody>
+          </table>
+      </section>
+  </main>
+
+    <footer>
+      <div class="sections">
+        <div class="d1">
+          <h3>Get In Touch</h3>
+          <p>
+            Contact us at:
+            <a href="mailto:xxxxxxxxxxxxxxxxxxxx">xxxxxxxxxxxxxxxxxxxx</a>
+          </p>
+          <p>Follow us on social media:</p>
+          <p>
+            <a href="#">Facebook</a> | <a href="#">Twitter</a> |
+            <a href="#">Instagram</a>
+          </p>
+        </div>
+        <div class="d2">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="Add_student.html">Add Student</a></li>
+            <li><a href="Update_student.html">Update Student</a></li>
+            <li><a href="search_student.html">Search for Students</a></li>
+            <li><a href="show_students.html">View All Students</a></li>
+            <li><a href="SignIn.html">SignIn</a></li>
+          </ul>
+        </div>
+        <div class="d3">
+          <h3>Popular Links</h3>
+          <ul>
+            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="Add_student.html">Add Student</a></li>
+            <li><a href="Update_student.html">Update Student</a></li>
+            <li><a href="search_student.html">Search for Students</a></li>
+            <li><a href="show_students.html">View All Students</a></li>
+            <li><a href="SignIn.html">SignIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyR">
+        <p>&copy; 2023 Student Affairs Website. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="../../static/js/show_students.js"></script>
+    <!--<script src = "../Webproject/js/data.js"></script>-->
+
+
+  </body>
+</html>
