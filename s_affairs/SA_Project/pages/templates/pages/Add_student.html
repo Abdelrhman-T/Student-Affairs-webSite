@@ -48,7 +48,7 @@
             <a href="{% url 'add_student' %}">Add Student</a>
           </li>
           <li><a href="{% url 'search_student' %}">Search for Students</a></li>
-          <li><a href="show_students">View All Students</a></li>
+          <li><a href="{% url 'show_students' %}">View All Students</a></li>
           <li><a href="{% url 'sign_out' %}">Sign Out</a></li>
         </ul>
         <a href="home">
