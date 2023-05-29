@@ -57,12 +57,12 @@ function validateForm() {
         return false;
     }
 
-    if (selectedOptionValue1 === "level 1") {
+    if (selectedOptionValue1 === "1") {
         flag = 1;
-    } else if (selectedOptionValue1 === "level 2") {
+    } else if (selectedOptionValue1 === "2") {
         flag = 2;
-    } else if (selectedOptionValue1 === "level 3") {
-    } else if (selectedOptionValue1 === "level 4") {
+    } else if (selectedOptionValue1 === "3") {
+    } else if (selectedOptionValue1 === "4") {
 
     } else {
         alert("No Level selected");
@@ -113,7 +113,7 @@ function toggleDepartment(levelSelect) {
     var departmentContainer = document.getElementById("department-container");
     var departmentSelect = document.getElementById("department");
 
-    if (levelSelect.value === "level 3" || levelSelect.value === "level 4") {
+    if (levelSelect.value === "3" || levelSelect.value === "4") {
         departmentContainer.style.display = "block";
         departmentSelect.required = true;
     } else {
