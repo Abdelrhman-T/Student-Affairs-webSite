@@ -48,14 +48,7 @@
     <script src="{% static 'js/SignIN.js' %}"></script>
     <header>
       <nav>
-        <ul>
-          <li><a href="{% url 'main' %}">Home</a></li>
-          <li><a href="{% url 'add_student' %}">Add Student</a></li>
-          <li><a href="{% url 'search_student' %}">Search for Students</a></li>
-          <li><a href="show_students">View All Students</a></li>
-          <li class="active"><a href="{% url 'SignIn' %}">SignIn</a></li>
-        </ul>
-        <a href="home">
+        <a href="">
           <img
             src="{% static 'images/logo.png' %}"
             alt="Student Affairs"
@@ -67,11 +60,10 @@
     </header>
 
     <div class="sign_administrator">
-      <div class="admin_title">
-        <h2>Sign in as an Administrator</h2>
-      </div>
+
 
       <div class="admin_body">
+        <h2>SignIn</h2>
         <form class="details" id="" action="" method="post">
           {% csrf_token %}
           <input

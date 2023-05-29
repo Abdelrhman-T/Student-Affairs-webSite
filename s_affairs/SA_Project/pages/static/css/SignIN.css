@@ -68,12 +68,13 @@
 }
 .admin_body {
   position: relative;
+  top: 140px;
   z-index: 1;
   background: #ffffff;
   height: 300px;
   max-width: 360px;
   margin: 0 auto 100px;
-  padding: 45px;
+  padding: 30px 45px 45px 45px;
   box-sizing: border-box;
   border-radius: 10px;
   text-align: center;
