@@ -39,10 +39,7 @@ body {
 
 .button a {
   font-size: 40px;
-<<<<<<< HEAD
-=======
   line-height: 75px;
->>>>>>> 69e53420f99c813afa67dab9d7838fb56ad57a28
 }
 .button:hover,
 .button:focus-visible {
