@@ -138,23 +138,25 @@
         <div class="d2">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="home.html" class="active">Home</a></li>
-            <li><a href="Add_student.html">Add Student</a></li>
-            <li><a href="Update_student.html">Update Student</a></li>
-            <li><a href="search_student.html">Search for Students</a></li>
-            <li><a href="show_students.html">View All Students</a></li>
-            <li><a href="SignIn.html">SignIn</a></li>
+            <li><a href="{% url 'main' %}" class="active">Home</a></li>
+            <li><a href="{% url 'add_student' %}">Add Student</a></li>
+            <li>
+              <a href="{% url 'search_student' %}">Search for Students</a>
+            </li>
+            <li><a href="{% url 'show_students' %}">View All Students</a></li>
+            <li><a href="{% url 'SignIn' %}">SignIn</a></li>
           </ul>
         </div>
         <div class="d3">
           <h3>Popular Links</h3>
           <ul>
-            <li><a href="home.html" class="active">Home</a></li>
-            <li><a href="Add_student.html">Add Student</a></li>
-            <li><a href="Update_student.html">Update Student</a></li>
-            <li><a href="search_student.html">Search for Students</a></li>
-            <li><a href="show_students.html">View All Students</a></li>
-            <li><a href="SignIn.html">SignIn</a></li>
+            <li><a href="{% url 'main' %}" class="active">Home</a></li>
+            <li><a href="{% url 'add_student' %}">Add Student</a></li>
+            <li>
+              <a href="{% url 'search_student' %}">Search for Students</a>
+            </li>
+            <li><a href="{% url 'show_students' %}">View All Students</a></li>
+            <li><a href="{% url 'SignIn' %}">SignIn</a></li>
           </ul>
         </div>
       </div>
