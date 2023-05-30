@@ -68,8 +68,20 @@ def search(request):
 @login_required(login_url='SignIn')
 def update(request, pk):
     student = Student.objects.get(pk=pk)
-    # return HttpResponse(student.name)
-    return render(request, "pages/update_student.html", {"student": student})
+    if request.method == 'POST':
+        # student.name = request.POST.get('name') 
+        # student.email = request.POST.get('email')
+        # student.phonenumber = request.POST.get('phonenumber')
+        # student.gpa = request.POST.get('gpa')
+        student.level = request.POST.get('level')  # Updated line
+        # student.status = request.POST.get('status') == 'active'
+        # student.department = request.POST.get('department')
+        student.department = student.department if student.department != '' else None
+        
+        student.save()
+        return redirect('main')  
+    return render(request, "pages/update_student.html", {"student": student, "levels": list(range(1, 5)), "departments": ["CS", "IS", "IT", "SW"]})
+
 
 
 def SignIn(request):

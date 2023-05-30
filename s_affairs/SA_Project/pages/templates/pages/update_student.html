@@ -70,7 +70,9 @@
 
     <!-- Student details form -->
     <div class="formcontainer">
-      <form>
+      <form method="POST" action="">
+        {% csrf_token %}
+
         <div class="form-group">
           <label for="name">Name:</label>
           <input
@@ -88,7 +90,7 @@
           <input
             type="text"
             id="Email"
-            name="Email"
+            name="email"
             value="{{ student.email }}"
             disabled
           />
@@ -100,7 +102,7 @@
           <input
             type="text"
             id="phone"
-            name="phone"
+            name="phonenumber"
             value="{{ student.phone_number }}"
             disabled
           />
@@ -112,7 +114,7 @@
           <input
             type="text"
             id="id"
-            name="id"
+            name="student_id"
             value="{{ student.student_id }}"
             disabled
           />
@@ -133,12 +135,14 @@
 
         <div class="form-group">
           <label for="levels">Level:</label>
-          <select name="levels" id="levels" disabled>
-            <option value="">Choose Level</option>
-            <option value="cs">Level 1</option>
-            <option value="ds">Level 2</option>
-            <option value="is">Level 3</option>
-            <option value="ai">Level 4</option>
+          <select name="level" id="levels" disabled>
+            {% for level in levels %}
+            {% if student.level == level %}
+            <option value="{{ level }}" selected>Level {{ level }}</option>
+            {% else %}
+            <option value="{{ level }}">Level {{ level }}</option>
+            {% endif %}
+            {% endfor %}
           </select>
           <button type="button" class="btn-edit">Edit</button>
         </div>
@@ -146,8 +150,8 @@
         <div class="form-group">
           <label for="status">Status:</label>
           <div class="radio-group">
-            <label
-              ><input type="radio" name="status" value="active" />Active</label
+            {% if student.status %}
+            <label><input type="radio" name="status" value="active" checked />Active</label
             >
             <label
               ><input
@@ -156,21 +160,39 @@
                 value="inactive"
               />Inactive</label
             >
+            {% else %}
+            
+            <label><input type="radio" name="status" value="active" />Active</label
+            >
+            <label
+              ><input
+                type="radio"
+                name="status"
+                value="inactive"
+                checked
+              />Inactive</label
+            >
+            {% endif %}
+            
           </div>
         </div>
 
-        <div class="form-group">
-          <label for="department">Department:</label>
-          <select name="department" id="department" disabled>
-            <option value="">Choose department</option>
-            <option value="cs">CS</option>
-            <option value="ds">DS</option>
-            <option value="is">IS</option>
-            <option value="ai">AI</option>
-          </select>
+        
+        {%if student.level == 3%}
+          <div class="form-group">
+            <label for="department">Department:</label>
+            <select name="department" id="department" disabled>
+              {% for department in departments %}
+            {% if student.department == department %}
+            <option value="{{ department }}" selected>{{ department }}</option>
+            {% else %}
+            <option value="{{ department }}">{{ department }}</option>
+            {% endif %}
+            {% endfor %}
+            </select>
           <button type="button" class="btn-edit">Edit</button>
         </div>
-
+{%endif%}
         <input type="submit" value="Update Student" />
       </form>
     </div>
