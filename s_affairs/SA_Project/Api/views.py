@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from pages.models import Student
 from pages.serializers import StudentSerializer
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
@@ -16,6 +17,7 @@ def student_list(request):
     return Response(serializer.data)
 
 
+@csrf_exempt
 @api_view(['GET', 'DELETE'])
 def get_student(request, pk):
     student = Student.objects.get(pk=pk)
