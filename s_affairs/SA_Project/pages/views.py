@@ -69,19 +69,26 @@ def search(request):
 def update(request, pk):
     student = Student.objects.get(pk=pk)
     if request.method == 'POST':
-        # student.name = request.POST.get('name') 
-        # student.email = request.POST.get('email')
-        # student.phonenumber = request.POST.get('phonenumber')
-        # student.gpa = request.POST.get('gpa')
-        student.level = request.POST.get('level')  # Updated line
-        # student.status = request.POST.get('status') == 'active'
-        # student.department = request.POST.get('department')
-        student.department = student.department if student.department != '' else None
+        if request.POST.get('name'):
+            student.name = request.POST.get('name')
+        if request.POST.get('email'):
+            student.email = request.POST.get('email')
+        if request.POST.get('phonenumber'):
+            student.phonenumber = request.POST.get('phonenumber')
+        if request.POST.get('gpa'):
+            student.gpa = request.POST.get('gpa')
+        if request.POST.get('level'):
+            student.level = request.POST.get('level')
+        if request.POST.get('status'):
+            student.status = request.POST.get('status') == 'active'
+        if request.POST.get('department'):
+            student.department = request.POST.get('department')
+        else:
+            student.department = None
         
         student.save()
         return redirect('main')  
     return render(request, "pages/update_student.html", {"student": student, "levels": list(range(1, 5)), "departments": ["CS", "IS", "IT", "SW"]})
-
 
 
 def SignIn(request):
