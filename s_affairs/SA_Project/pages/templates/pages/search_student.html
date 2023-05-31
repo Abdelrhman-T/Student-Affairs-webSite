@@ -2,138 +2,123 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Search Student</title>
-    <link rel="stylesheet" href="{% static 'css/common.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/search.css' %}" />
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;800&display=swap"
-      rel="stylesheet"
-    />
-    <!-- FontAwsom icons -->
-    <script
-      src="https://kit.fontawesome.com/cc1bd84a2e.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="{% url 'main' %}">Home</a></li>
-          <li><a href="{% url 'add_student' %}">Add Student</a></li>
-          <li class="active">
-            <a href="{% url 'search_student' %}">Search for Students</a>
-          </li>
 
-          <li><a href="{% url 'show_students' %}">View All Students</a></li>
-          <li><a href="{% url 'sign_out' %}">Sign Out</a></li>
-        </ul>
-        <a href="home.html">
-          <img
-            src="{% static 'images/logo.png' %}"
-            alt="Student Affairs"
-            width="180px"
-            height="46"
-          />
-        </a>
-      </nav>
-    </header>
-    <section class="search-container">
-      <div class="merged-table">
-        <div class="search-form">
-          <form action="#">
-            <div class="search-box">
-              <input
-                placeholder="Enter Student Name/ID"
-                type="text"
-                id="search"
-                autocomplete="off"
-                maxlength="100"
-              />
-            </div>
-          </form>
-        </div>
-        <div class="result">
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>ID</th>
-                <th>GPA</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-            <tfoot></tfoot>
-          </table>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <title>Search Student</title>
+  <link rel="stylesheet" href="{% static 'css/common.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/search.css' %}" />
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;800&display=swap" rel="stylesheet" />
+  <!-- FontAwsom icons -->
+  <script src="https://kit.fontawesome.com/cc1bd84a2e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="{% url 'main' %}">Home</a></li>
+        <li><a href="{% url 'add_student' %}">Add Student</a></li>
+        <li class="active">
+          <a href="{% url 'search_student' %}">Search for Students</a>
+        </li>
+
+        <li><a href="{% url 'show_students' %}">View All Students</a></li>
+        <li><a href="{% url 'sign_out' %}">Sign Out</a></li>
+      </ul>
+      <a href="{% url 'main' %}">
+        <img src="{% static 'images/logo.png' %}" alt="Student Affairs" width="180px" height="46" />
+      </a>
+    </nav>
+  </header>
+  <section class="search-container">
+    <div class="merged-table">
+      <div class="search-form">
+        <form action="#">
+          <div class="search-box">
+            <input placeholder="Enter Student Name/ID" type="text" id="search" autocomplete="off" maxlength="100" />
+          </div>
+        </form>
       </div>
-      <div class="navigation">
-        <div class="arrows">
-          <i class="fa-solid fa-caret-left" id="left"></i>
-          <i class="fa-solid fa-caret-right" id="right"></i>
-        </div>
-        <div>
-          <p>
-            Showing <span id="current-page"></span> /
-            <span id="total-pages"></span> Pages
-          </p>
-        </div>
-      </div>
-    </section>
-    <div class="overlay-container hidden">
-      <div class="overlay"></div>
-      <div class="msg">
-        <span class="cross">&times;</span>
-        <div class="content"></div>
+      <div class="result">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>ID</th>
+              <th>GPA</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+          <tfoot></tfoot>
+        </table>
       </div>
     </div>
-    <template id="error-overlay">
-      <p>
-        Cannot Modify Student's Department.<br />
-        Current Student Level: <span id="student-level"></span><br />
-        Required Level: 3
-      </p>
-    </template>
-    <template id="delete-overlay">
-      <p>
-        Are You Sure You Want To Delete Student: <span id="student-id"></span>?
-      </p>
-      <form action="#" class="delete-form">
-        <button type="submit" student-id="" id="confirm-delete-btn">
-          Delete
-        </button>
-      </form>
-    </template>
-    <template id="student-row">
-      <tr>
-        <td class="student-name"></td>
-        <td class="student-id"></td>
-        <td class="student-gpa"></td>
-        <td>
-          <div class="actions">
-            <span>
-              <i class="fa-solid fa-door-open department"></i>
-            </span>
-            <span>
-              <i class="fa-solid fa-pen-to-square edit"></i>
-            </span>
-            <span>
-              <i class="fa-solid fa-trash-can delete"></i>
-            </span>
-          </div>
-        </td>
-      </tr>
-    </template>
-    <script src="{% static 'js/search.js' %}"></script>
-  </body>
+    <div class="navigation">
+      <div class="arrows">
+        <i class="fa-solid fa-caret-left" id="left"></i>
+        <i class="fa-solid fa-caret-right" id="right"></i>
+      </div>
+      <div>
+        <p>
+          Showing <span id="current-page"></span> /
+          <span id="total-pages"></span> Pages
+        </p>
+      </div>
+    </div>
+  </section>
+  <div class="overlay-container hidden">
+    <div class="overlay"></div>
+    <div class="msg">
+      <span class="cross">&times;</span>
+      <div class="content"></div>
+    </div>
+  </div>
+  <template id="error-overlay">
+    <p>
+      Cannot Modify Student's Department.<br />
+      Current Student Level: <span id="student-level"></span><br />
+      Required Level: 3
+    </p>
+  </template>
+  <template id="delete-overlay">
+    <p>
+      Are You Sure You Want To Delete Student: <span id="student-id"></span>?
+    </p>
+    <form action="#" class="delete-form">
+      <button type="submit" student-id="" id="confirm-delete-btn">
+        Delete
+      </button>
+    </form>
+  </template>
+  <template id="student-row">
+    <tr>
+      <td class="student-name"></td>
+      <td class="student-id"></td>
+      <td class="student-gpa"></td>
+      <td>
+        <div class="actions">
+          <span>
+            <i class="fa-solid fa-door-open department"></i>
+          </span>
+          <span>
+            <i class="fa-solid fa-pen-to-square edit"></i>
+          </span>
+          <span>
+            <i class="fa-solid fa-trash-can delete"></i>
+          </span>
+        </div>
+      </td>
+    </tr>
+  </template>
+  <script src="{% static 'js/search.js' %}"></script>
+</body>
+
 </html>

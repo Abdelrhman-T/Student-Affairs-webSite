@@ -94,6 +94,9 @@ function validateForm() {
     if (birthday === "") {
         alert("Date not selected");
         return false;
+    } else if (!isValidAge(birthday)) {
+        alert("Age must be between 18 and 50.");
+        return false;
     }
 
     if (radio3.checked) {
@@ -144,4 +147,17 @@ function isValid_id(id) {
 function isValidGpa(gpa) {
     var Gparegex = /^([0-3].\d{1,2}|4.0)$/;
     return Gparegex.test(gpa);
+}
+
+function isValidAge(birthday) {
+    var today = new Date();
+    var birthDate = new Date(birthday);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var monthDiff = today.getMonth() - birthDate.getMonth();
+
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+
+    return age >= 18 && age <= 50;
 }

@@ -1,201 +1,146 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <style>
-      body {
-        background-image: url("{% static 'images/blurd.jpg' %}");
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: 100% 100%;
-        background-size: cover;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-      }
-    </style>
-    <meta charset="UTF-8" />
-    <title>Add New Student</title>
-    <link rel="stylesheet" href="{% static 'css/common.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/Add_student.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/updatestudent.css' %}" />
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;800&display=swap"
-      rel="stylesheet"
-    />
-    <!-- FontAwsom icons -->
-    <script
-      src="https://kit.fontawesome.com/cc1bd84a2e.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
+<head>
+  <style>
+    body {
+      background-image: url("{% static 'images/blurd.jpg' %}");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      background-size: cover;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+  </style>
+  <meta charset="UTF-8" />
+  <title>Add New Student</title>
+  <link rel="stylesheet" href="{% static 'css/common.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/Add_student.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/updatestudent.css' %}" />
 
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="{% url 'main' %}">Home</a></li>
-          <li>
-            <a href="{% url 'add_student' %}">Add Student</a>
-          </li>
-          <li><a href="{% url 'search_student' %}">Search for Students</a></li>
-          <li><a href="{% url 'show_students' %}">View All Students</a></li>
-          <li><a href="{% url 'sign_out' %}">Sign Out</a></li>
-        </ul>
-        <a href="home">
-          <img
-            src="{% static 'images/logo.png' %}"
-            alt="Student Affairs"
-            width="180px"
-            height="46"
-          />
-        </a>
-      </nav>
-    </header>
-    <br />
-    <br />
-    <br />
-    <br />
-    <!-- <h1>Add New Student</h1> -->
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;800&display=swap" rel="stylesheet" />
+  <!-- FontAwsom icons -->
+  <script src="https://kit.fontawesome.com/cc1bd84a2e.js" crossorigin="anonymous"></script>
+</head>
 
-    <!-- Student details form -->
-    <div class="formcontainer">
-      <form method="POST" action="">
-        {% csrf_token %}
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="{% url 'main' %}">Home</a></li>
+        <li>
+          <a href="{% url 'add_student' %}">Add Student</a>
+        </li>
+        <li><a href="{% url 'search_student' %}">Search for Students</a></li>
+        <li><a href="{% url 'show_students' %}">View All Students</a></li>
+        <li><a href="{% url 'sign_out' %}">Sign Out</a></li>
+      </ul>
+      <a href="{% url 'main' %}">
+        <img src="{% static 'images/logo.png' %}" alt="Student Affairs" width="180px" height="46" />
+      </a>
+    </nav>
+  </header>
+  <br />
+  <br />
+  <br />
+  <br />
+  <!-- <h1>Add New Student</h1> -->
 
-        <div class="form-group">
-          <label for="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value="{{ student.name }}"
-            disabled
-          />
-          <button type="button" class="btn-edit">Edit</button>
+  <!-- Student details form -->
+  <div class="formcontainer">
+    <form method="POST" action="">
+      {% csrf_token %}
+
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ student.name }}" disabled />
+        <button type="button" class="btn-edit">Edit</button>
+      </div>
+
+      <div class="form-group">
+        <label for="Email">Email:</label>
+        <input type="text" id="Email" name="email" value="{{ student.email }}" disabled />
+        <button type="button" class="btn-edit">Edit</button>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phonenumber" value="{{ student.phone_number }}" disabled />
+        <button type="button" class="btn-edit">Edit</button>
+      </div>
+
+      <div class="form-group">
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="student_id" value="{{ student.student_id }}" disabled />
+        <button type="button" class="btn-edit">Edit</button>
+      </div>
+
+      <div class="form-group">
+        <label for="gpa">GPA:</label>
+        <input type="text" id="gpa" name="gpa" value="{{ student.gpa }}" disabled />
+        <button type="button" class="btn-edit">Edit</button>
+      </div>
+
+      <div class="form-group">
+        <label for="levels">Level:</label>
+        <select name="level" id="levels" disabled>
+          {% for level in levels %}
+          {% if student.level == level %}
+          <option value="{{ level }}" selected>Level {{ level }}</option>
+          {% else %}
+          <option value="{{ level }}">Level {{ level }}</option>
+          {% endif %}
+          {% endfor %}
+        </select>
+        <button type="button" class="btn-edit">Edit</button>
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status:</label>
+        <div class="radio-group">
+          {% if student.status %}
+          <label><input type="radio" name="status" value="active" checked />Active</label>
+          <label><input type="radio" name="status" value="inactive" />Inactive</label>
+          {% else %}
+
+          <label><input type="radio" name="status" value="active" />Active</label>
+          <label><input type="radio" name="status" value="inactive" checked />Inactive</label>
+          {% endif %}
+
         </div>
+      </div>
 
-        <div class="form-group">
-          <label for="Email">Email:</label>
-          <input
-            type="text"
-            id="Email"
-            name="email"
-            value="{{ student.email }}"
-            disabled
-          />
-          <button type="button" class="btn-edit">Edit</button>
-        </div>
 
-        <div class="form-group">
-          <label for="phone">Phone Number:</label>
-          <input
-            type="text"
-            id="phone"
-            name="phonenumber"
-            value="{{ student.phone_number }}"
-            disabled
-          />
-          <button type="button" class="btn-edit">Edit</button>
-        </div>
+      {%if student.level == 3%}
+      <div class="form-group">
+        <label for="department">Department:</label>
+        <select name="department" id="department" disabled>
+          {% for department in departments %}
+          {% if student.department == department %}
+          <option value="{{ department }}" selected>{{ department }}</option>
+          {% else %}
+          <option value="{{ department }}">{{ department }}</option>
+          {% endif %}
+          {% endfor %}
+        </select>
+        <button type="button" class="btn-edit">Edit</button>
+      </div>
+      {%endif%}
+      <input type="submit" value="Update Student" />
+    </form>
+  </div>
+  <script src="{% static 'js/updatestudent.js' %}"></script>
+</body>
 
-        <div class="form-group">
-          <label for="id">ID:</label>
-          <input
-            type="text"
-            id="id"
-            name="student_id"
-            value="{{ student.student_id }}"
-            disabled
-          />
-          <button type="button" class="btn-edit">Edit</button>
-        </div>
-
-        <div class="form-group">
-          <label for="gpa">GPA:</label>
-          <input
-            type="text"
-            id="gpa"
-            name="gpa"
-            value="{{ student.gpa }}"
-            disabled
-          />
-          <button type="button" class="btn-edit">Edit</button>
-        </div>
-
-        <div class="form-group">
-          <label for="levels">Level:</label>
-          <select name="level" id="levels" disabled>
-            {% for level in levels %}
-            {% if student.level == level %}
-            <option value="{{ level }}" selected>Level {{ level }}</option>
-            {% else %}
-            <option value="{{ level }}">Level {{ level }}</option>
-            {% endif %}
-            {% endfor %}
-          </select>
-          <button type="button" class="btn-edit">Edit</button>
-        </div>
-
-        <div class="form-group">
-          <label for="status">Status:</label>
-          <div class="radio-group">
-            {% if student.status %}
-            <label><input type="radio" name="status" value="active" checked />Active</label
-            >
-            <label
-              ><input
-                type="radio"
-                name="status"
-                value="inactive"
-              />Inactive</label
-            >
-            {% else %}
-            
-            <label><input type="radio" name="status" value="active" />Active</label
-            >
-            <label
-              ><input
-                type="radio"
-                name="status"
-                value="inactive"
-                checked
-              />Inactive</label
-            >
-            {% endif %}
-            
-          </div>
-        </div>
-
-        
-        {%if student.level == 3%}
-          <div class="form-group">
-            <label for="department">Department:</label>
-            <select name="department" id="department" disabled>
-              {% for department in departments %}
-            {% if student.department == department %}
-            <option value="{{ department }}" selected>{{ department }}</option>
-            {% else %}
-            <option value="{{ department }}">{{ department }}</option>
-            {% endif %}
-            {% endfor %}
-            </select>
-          <button type="button" class="btn-edit">Edit</button>
-        </div>
-{%endif%}
-        <input type="submit" value="Update Student" />
-      </form>
-    </div>
-    <script src="{% static 'js/updatestudent.js' %}"></script>
-  </body>
 </html>
